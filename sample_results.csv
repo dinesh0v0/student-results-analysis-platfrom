@@ -1,0 +1,21 @@
+register_number,student_name,semester,subject_code,subject_name,marks_obtained,max_marks
+2026CS001,Alice Johnson,1,CS101,Introduction to Programming,85,100
+2026CS001,Alice Johnson,1,CS102,Data Structures,78,100
+2026CS001,Alice Johnson,1,MA101,Calculus I,92,100
+2026CS002,Bob Smith,1,CS101,Introduction to Programming,65,100
+2026CS002,Bob Smith,1,CS102,Data Structures,55,100
+2026CS002,Bob Smith,1,MA101,Calculus I,45,100
+2026CS003,Charlie Brown,1,CS101,Introduction to Programming,95,100
+2026CS003,Charlie Brown,1,CS102,Data Structures,88,100
+2026CS003,Charlie Brown,1,MA101,Calculus I,90,100
+2026CS004,Diana Prince,1,CS101,Introduction to Programming,72,100
+2026CS004,Diana Prince,1,CS102,Data Structures,81,100
+2026CS004,Diana Prince,1,MA101,Calculus I,75,100
+2026CS001,Alice Johnson,2,CS201,Algorithms,88,100
+2026CS001,Alice Johnson,2,CS202,Database Systems,91,100
+2026CS002,Bob Smith,2,CS201,Algorithms,52,100
+2026CS002,Bob Smith,2,CS202,Database Systems,60,100
+2026CS003,Charlie Brown,2,CS201,Algorithms,96,100
+2026CS003,Charlie Brown,2,CS202,Database Systems,94,100
+2026CS004,Diana Prince,2,CS201,Algorithms,77,100
+2026CS004,Diana Prince,2,CS202,Database Systems,85,100

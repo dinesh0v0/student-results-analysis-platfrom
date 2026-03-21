@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic[email]
+email-validator
+pydantic-settings
+pandas
+openpyxl
+supabase
+python-jose[cryptography]
+httpx
+google-generativeai
+reportlab
+python-dotenv
