@@ -1,6 +1,7 @@
 # =============================================================================
 # JWT Authentication Middleware
 # =============================================================================
+import base64
 from fastapi import HTTPException, Security, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import jwt, JWTError
@@ -9,6 +10,9 @@ from typing import Optional
 
 security = HTTPBearer()
 settings = get_settings()
+
+# Supabase JWT secret is base64-encoded; decode to get the raw HMAC signing key
+_jwt_signing_key = base64.b64decode(settings.SUPABASE_JWT_SECRET)
 
 
 class AuthenticatedUser:
@@ -32,7 +36,7 @@ async def get_current_user(
     try:
         payload = jwt.decode(
             token,
-            settings.SUPABASE_JWT_SECRET,
+            _jwt_signing_key,
             algorithms=["HS256"],
             audience="authenticated",
         )
