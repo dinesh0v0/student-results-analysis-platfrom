@@ -1,15 +1,13 @@
 # =============================================================================
 # JWT Authentication Middleware
+# Uses Supabase's own auth API to verify tokens — most reliable approach.
 # =============================================================================
-import base64
 from fastapi import HTTPException, Security
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from jose import jwt, JWTError
-from config import get_settings
+from services.supabase_client import supabase_admin
 from typing import Optional
 
 security = HTTPBearer()
-settings = get_settings()
 
 
 class AuthenticatedUser:
@@ -26,59 +24,36 @@ async def get_current_user(
     credentials: HTTPAuthorizationCredentials = Security(security),
 ) -> AuthenticatedUser:
     """
-    Verify the JWT Bearer token from Supabase and extract user info.
-    Tries both raw and base64-decoded secrets to ensure compatibility.
+    Verify the JWT Bearer token by calling Supabase's auth.get_user() API.
+    This is the most reliable method — no local key/algorithm issues.
     """
     token = credentials.credentials
-    secret = settings.SUPABASE_JWT_SECRET
-    
-    # Try decoding with base64-decoded secret first (standard for Supabase)
-    # then fallback to raw secret if that fails.
-    payload = None
-    last_error = None
-    
-    # List of keys to try
-    keys_to_try = []
+
     try:
-        keys_to_try.append(base64.b64decode(secret))
-    except Exception:
-        pass
-    keys_to_try.append(secret)
-    
-    for key in keys_to_try:
-        try:
-            payload = jwt.decode(
-                token,
-                key,
-                algorithms=["HS256", "HS384", "HS512"],
-                options={"verify_aud": False}  # Temporarily disable aud check to debug if needed
+        # Use Supabase admin client to verify the token via their API
+        user_response = supabase_admin.auth.get_user(token)
+
+        if not user_response or not user_response.user:
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid or expired authentication token",
             )
-            if payload:
-                break
-        except JWTError as e:
-            last_error = str(e)
-            continue
-            
-    if payload is None:
+
+        user = user_response.user
+        user_id = str(user.id)
+        email = user.email or ""
+        role = (user.user_metadata or {}).get("role", "authenticated")
+
+        return AuthenticatedUser(
+            user_id=user_id,
+            email=email,
+            role=role,
+            access_token=token,
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
         raise HTTPException(
             status_code=401,
-            detail=f"Authentication failed: {last_error or 'Invalid token'}",
+            detail=f"Authentication failed: {str(e)}",
         )
-
-    user_id: Optional[str] = payload.get("sub")
-    email: Optional[str] = payload.get("email")
-    role: str = payload.get("role", "authenticated")
-
-    if user_id is None:
-        raise HTTPException(
-            status_code=401,
-            detail="Invalid authentication token: missing user ID (sub)",
-        )
-
-    return AuthenticatedUser(
-        user_id=user_id,
-        email=email or "",
-        role=role,
-        access_token=token,
-    )
-
