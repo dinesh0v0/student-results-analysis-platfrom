@@ -9,7 +9,7 @@ from config import get_settings
 settings = get_settings()
 
 MODEL_NAME = "gemini-2.0-flash"
-MODEL_TIMEOUT_SECONDS = 15
+MODEL_TIMEOUT_SECONDS = 25
 MAX_MESSAGE_LENGTH = 500
 AI_OVERLOADED_MESSAGE = "I am currently overloaded, please try again in a moment."
 AI_REJECTION_MESSAGE = (
@@ -99,6 +99,17 @@ async def _generate_response(system_prompt: str, user_message: str) -> str:
         return AI_OVERLOADED_MESSAGE
 
     text = getattr(response, "text", "") or ""
+    if not text:
+        candidates = getattr(response, "candidates", None) or []
+        extracted_parts: List[str] = []
+        for candidate in candidates:
+            content = getattr(candidate, "content", None)
+            parts = getattr(content, "parts", None) or []
+            for part in parts:
+                part_text = getattr(part, "text", "") or ""
+                if part_text.strip():
+                    extracted_parts.append(part_text.strip())
+        text = "\n".join(extracted_parts)
     text = text.strip()
     return text or AI_OVERLOADED_MESSAGE
 

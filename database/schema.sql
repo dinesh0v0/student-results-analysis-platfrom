@@ -44,6 +44,11 @@ CREATE TABLE public.students (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     institution_id UUID NOT NULL REFERENCES public.institutions(id) ON DELETE CASCADE,
     auth_user_id UUID UNIQUE REFERENCES auth.users(id) ON DELETE SET NULL,
+    campus TEXT,
+    faculty TEXT,
+    department TEXT,
+    branch TEXT,
+    section TEXT,
     register_number TEXT NOT NULL,
     student_name TEXT NOT NULL,
     email TEXT,
@@ -167,8 +172,14 @@ CREATE POLICY "Students can view subjects of their institution"
 CREATE TABLE public.results (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     institution_id UUID NOT NULL REFERENCES public.institutions(id) ON DELETE CASCADE,
+    upload_batch_id UUID,
     student_id UUID NOT NULL REFERENCES public.students(id) ON DELETE CASCADE,
     subject_id UUID NOT NULL REFERENCES public.subjects(id) ON DELETE CASCADE,
+    campus TEXT,
+    faculty TEXT,
+    department TEXT,
+    branch TEXT,
+    section TEXT,
     semester INT NOT NULL CHECK (semester > 0 AND semester <= 12),
     marks_obtained NUMERIC(5,2) CHECK (marks_obtained IS NULL OR marks_obtained >= 0),
     max_marks NUMERIC(5,2) NOT NULL DEFAULT 100 CHECK (max_marks > 0),
@@ -242,6 +253,21 @@ CREATE TABLE public.upload_batches (
     uploaded_at TIMESTAMPTZ DEFAULT NOW(),
     completed_at TIMESTAMPTZ
 );
+
+CREATE INDEX idx_students_hierarchy
+    ON public.students (institution_id, campus, faculty, department, branch, section);
+
+CREATE INDEX idx_results_hierarchy
+    ON public.results (institution_id, campus, faculty, department, branch, section, semester);
+
+CREATE INDEX idx_results_upload_batch_id
+    ON public.results (upload_batch_id);
+
+ALTER TABLE public.results
+    ADD CONSTRAINT results_upload_batch_id_fkey
+    FOREIGN KEY (upload_batch_id)
+    REFERENCES public.upload_batches(id)
+    ON DELETE SET NULL;
 
 ALTER TABLE public.upload_batches ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.upload_batches FORCE ROW LEVEL SECURITY;
@@ -336,6 +362,7 @@ $$;
 -- =============================================================================
 CREATE OR REPLACE FUNCTION public.process_result_upload_batch(
     p_institution_id UUID,
+    p_batch_id UUID,
     p_rows JSONB
 )
 RETURNS JSONB
@@ -364,15 +391,30 @@ BEGIN
     LOOP
         INSERT INTO public.students (
             institution_id,
+            campus,
+            faculty,
+            department,
+            branch,
+            section,
             register_number,
             student_name
         ) VALUES (
             p_institution_id,
+            NULLIF(trim(COALESCE(row_data->>'campus', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'faculty', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'department', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'branch', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'section', '')), ''),
             trim(row_data->>'register_number'),
             trim(row_data->>'student_name')
         )
         ON CONFLICT (institution_id, register_number)
         DO UPDATE SET
+            campus = EXCLUDED.campus,
+            faculty = EXCLUDED.faculty,
+            department = EXCLUDED.department,
+            branch = EXCLUDED.branch,
+            section = EXCLUDED.section,
             student_name = EXCLUDED.student_name,
             updated_at = NOW()
         RETURNING id INTO v_student_id;
@@ -398,8 +440,14 @@ BEGIN
 
         INSERT INTO public.results (
             institution_id,
+            upload_batch_id,
             student_id,
             subject_id,
+            campus,
+            faculty,
+            department,
+            branch,
+            section,
             semester,
             marks_obtained,
             max_marks,
@@ -407,8 +455,14 @@ BEGIN
             pass_status
         ) VALUES (
             p_institution_id,
+            p_batch_id,
             v_student_id,
             v_subject_id,
+            NULLIF(trim(COALESCE(row_data->>'campus', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'faculty', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'department', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'branch', '')), ''),
+            NULLIF(trim(COALESCE(row_data->>'section', '')), ''),
             (row_data->>'semester')::INT,
             (row_data->>'marks')::NUMERIC(5,2),
             (row_data->>'max_marks')::NUMERIC(5,2),
@@ -418,6 +472,12 @@ BEGIN
         ON CONFLICT (student_id, subject_id, semester)
         DO UPDATE SET
             institution_id = EXCLUDED.institution_id,
+            upload_batch_id = EXCLUDED.upload_batch_id,
+            campus = EXCLUDED.campus,
+            faculty = EXCLUDED.faculty,
+            department = EXCLUDED.department,
+            branch = EXCLUDED.branch,
+            section = EXCLUDED.section,
             marks_obtained = EXCLUDED.marks_obtained,
             max_marks = EXCLUDED.max_marks,
             grade = EXCLUDED.grade,

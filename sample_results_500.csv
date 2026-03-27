@@ -1,0 +1,501 @@
+campus,faculty,department,branch,section,register_number,student_name,semester,subject_codes,subject_names,marks,max_marks,grades
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE001,Student 001,1,MA101,Calculus and Linear Algebra,38,100,F
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE001,Student 001,1,PH101,Engineering Physics,47,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE001,Student 001,1,CS101,Programming in C,56,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE001,Student 001,1,HS101,Communicative English,65,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE001,Student 001,1,ME101,Engineering Graphics,74,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT002,Student 002,2,MA201,Discrete Mathematics,49,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT002,Student 002,2,CS201,Data Structures,58,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT002,Student 002,2,EC201,Digital Logic Design,67,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT002,Student 002,2,EE201,Circuit Theory,76,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT002,Student 002,2,HS201,Professional Communication,85,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE003,Student 003,3,CS301,Database Management Systems,60,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE003,Student 003,3,CS302,Object Oriented Programming,69,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE003,Student 003,3,CS303,Computer Organization,78,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE003,Student 003,3,MA301,Probability and Statistics,87,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE003,Student 003,3,CS304,Operating Systems,96,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE004,Student 004,4,CS401,Design and Analysis of Algorithms,71,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE004,Student 004,4,CS402,Computer Networks,80,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE004,Student 004,4,CS403,Software Engineering,89,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE004,Student 004,4,CS404,Microprocessors and Interfacing,38,100,F
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE004,Student 004,4,CS405,Theory of Computation,47,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH005,Student 005,5,CS501,Web Technologies,82,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH005,Student 005,5,CS502,Compiler Design,91,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH005,Student 005,5,CS503,Machine Learning Fundamentals,40,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH005,Student 005,5,CS504,Cloud Computing,49,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH005,Student 005,5,CS505,Open Elective I,58,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL006,Student 006,6,CS601,Artificial Intelligence,93,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL006,Student 006,6,CS602,Mobile Application Development,42,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL006,Student 006,6,CS603,Information Security,51,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL006,Student 006,6,CS604,Distributed Systems,60,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL006,Student 006,6,CS605,Open Elective II,69,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE007,Student 007,7,CS701,Big Data Analytics,44,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE007,Student 007,7,CS702,Internet of Things,53,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE007,Student 007,7,CS703,DevOps Engineering,62,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE007,Student 007,7,CS704,Data Visualization,71,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE007,Student 007,7,CS705,Project Phase I,80,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT008,Student 008,8,CS801,Blockchain Fundamentals,55,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT008,Student 008,8,CS802,Deep Learning Applications,64,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT008,Student 008,8,CS803,Cyber Forensics,73,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT008,Student 008,8,CS804,Project Phase II,82,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT008,Student 008,8,CS805,Industry Internship Review,91,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE009,Student 009,1,MA101,Calculus and Linear Algebra,66,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE009,Student 009,1,PH101,Engineering Physics,75,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE009,Student 009,1,CS101,Programming in C,84,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE009,Student 009,1,HS101,Communicative English,93,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE009,Student 009,1,ME101,Engineering Graphics,42,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE010,Student 010,2,MA201,Discrete Mathematics,77,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE010,Student 010,2,CS201,Data Structures,86,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE010,Student 010,2,EC201,Digital Logic Design,95,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE010,Student 010,2,EE201,Circuit Theory,44,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE010,Student 010,2,HS201,Professional Communication,53,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH011,Student 011,3,CS301,Database Management Systems,88,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH011,Student 011,3,CS302,Object Oriented Programming,97,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH011,Student 011,3,CS303,Computer Organization,46,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH011,Student 011,3,MA301,Probability and Statistics,55,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH011,Student 011,3,CS304,Operating Systems,64,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL012,Student 012,4,CS401,Design and Analysis of Algorithms,39,100,F
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL012,Student 012,4,CS402,Computer Networks,48,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL012,Student 012,4,CS403,Software Engineering,57,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL012,Student 012,4,CS404,Microprocessors and Interfacing,66,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL012,Student 012,4,CS405,Theory of Computation,75,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE013,Student 013,5,CS501,Web Technologies,50,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE013,Student 013,5,CS502,Compiler Design,59,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE013,Student 013,5,CS503,Machine Learning Fundamentals,68,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE013,Student 013,5,CS504,Cloud Computing,77,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE013,Student 013,5,CS505,Open Elective I,86,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT014,Student 014,6,CS601,Artificial Intelligence,61,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT014,Student 014,6,CS602,Mobile Application Development,70,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT014,Student 014,6,CS603,Information Security,79,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT014,Student 014,6,CS604,Distributed Systems,88,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT014,Student 014,6,CS605,Open Elective II,97,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE015,Student 015,7,CS701,Big Data Analytics,72,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE015,Student 015,7,CS702,Internet of Things,81,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE015,Student 015,7,CS703,DevOps Engineering,90,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE015,Student 015,7,CS704,Data Visualization,39,100,F
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE015,Student 015,7,CS705,Project Phase I,48,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE016,Student 016,8,CS801,Blockchain Fundamentals,83,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE016,Student 016,8,CS802,Deep Learning Applications,92,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE016,Student 016,8,CS803,Cyber Forensics,41,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE016,Student 016,8,CS804,Project Phase II,50,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE016,Student 016,8,CS805,Industry Internship Review,59,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH017,Student 017,1,MA101,Calculus and Linear Algebra,94,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH017,Student 017,1,PH101,Engineering Physics,43,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH017,Student 017,1,CS101,Programming in C,52,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH017,Student 017,1,HS101,Communicative English,61,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH017,Student 017,1,ME101,Engineering Graphics,70,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL018,Student 018,2,MA201,Discrete Mathematics,45,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL018,Student 018,2,CS201,Data Structures,54,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL018,Student 018,2,EC201,Digital Logic Design,63,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL018,Student 018,2,EE201,Circuit Theory,72,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL018,Student 018,2,HS201,Professional Communication,81,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE019,Student 019,3,CS301,Database Management Systems,56,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE019,Student 019,3,CS302,Object Oriented Programming,65,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE019,Student 019,3,CS303,Computer Organization,74,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE019,Student 019,3,MA301,Probability and Statistics,83,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE019,Student 019,3,CS304,Operating Systems,92,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT020,Student 020,4,CS401,Design and Analysis of Algorithms,67,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT020,Student 020,4,CS402,Computer Networks,76,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT020,Student 020,4,CS403,Software Engineering,85,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT020,Student 020,4,CS404,Microprocessors and Interfacing,94,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT020,Student 020,4,CS405,Theory of Computation,43,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE021,Student 021,5,CS501,Web Technologies,78,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE021,Student 021,5,CS502,Compiler Design,87,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE021,Student 021,5,CS503,Machine Learning Fundamentals,96,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE021,Student 021,5,CS504,Cloud Computing,45,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE021,Student 021,5,CS505,Open Elective I,54,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE022,Student 022,6,CS601,Artificial Intelligence,89,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE022,Student 022,6,CS602,Mobile Application Development,38,100,F
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE022,Student 022,6,CS603,Information Security,47,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE022,Student 022,6,CS604,Distributed Systems,56,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE022,Student 022,6,CS605,Open Elective II,65,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH023,Student 023,7,CS701,Big Data Analytics,40,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH023,Student 023,7,CS702,Internet of Things,49,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH023,Student 023,7,CS703,DevOps Engineering,58,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH023,Student 023,7,CS704,Data Visualization,67,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH023,Student 023,7,CS705,Project Phase I,76,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL024,Student 024,8,CS801,Blockchain Fundamentals,51,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL024,Student 024,8,CS802,Deep Learning Applications,60,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL024,Student 024,8,CS803,Cyber Forensics,69,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL024,Student 024,8,CS804,Project Phase II,78,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL024,Student 024,8,CS805,Industry Internship Review,87,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE025,Student 025,1,MA101,Calculus and Linear Algebra,62,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE025,Student 025,1,PH101,Engineering Physics,71,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE025,Student 025,1,CS101,Programming in C,80,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE025,Student 025,1,HS101,Communicative English,89,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE025,Student 025,1,ME101,Engineering Graphics,38,100,F
+North Campus,Engineering,Information Technology,IT,B,2026IT026,Student 026,2,MA201,Discrete Mathematics,73,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT026,Student 026,2,CS201,Data Structures,82,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT026,Student 026,2,EC201,Digital Logic Design,91,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT026,Student 026,2,EE201,Circuit Theory,40,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT026,Student 026,2,HS201,Professional Communication,49,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE027,Student 027,3,CS301,Database Management Systems,84,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE027,Student 027,3,CS302,Object Oriented Programming,93,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE027,Student 027,3,CS303,Computer Organization,42,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE027,Student 027,3,MA301,Probability and Statistics,51,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE027,Student 027,3,CS304,Operating Systems,60,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE028,Student 028,4,CS401,Design and Analysis of Algorithms,95,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE028,Student 028,4,CS402,Computer Networks,44,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE028,Student 028,4,CS403,Software Engineering,53,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE028,Student 028,4,CS404,Microprocessors and Interfacing,62,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE028,Student 028,4,CS405,Theory of Computation,71,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH029,Student 029,5,CS501,Web Technologies,46,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH029,Student 029,5,CS502,Compiler Design,55,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH029,Student 029,5,CS503,Machine Learning Fundamentals,64,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH029,Student 029,5,CS504,Cloud Computing,73,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH029,Student 029,5,CS505,Open Elective I,82,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL030,Student 030,6,CS601,Artificial Intelligence,57,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL030,Student 030,6,CS602,Mobile Application Development,66,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL030,Student 030,6,CS603,Information Security,75,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL030,Student 030,6,CS604,Distributed Systems,84,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL030,Student 030,6,CS605,Open Elective II,93,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE031,Student 031,7,CS701,Big Data Analytics,68,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE031,Student 031,7,CS702,Internet of Things,77,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE031,Student 031,7,CS703,DevOps Engineering,86,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE031,Student 031,7,CS704,Data Visualization,95,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE031,Student 031,7,CS705,Project Phase I,44,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT032,Student 032,8,CS801,Blockchain Fundamentals,79,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT032,Student 032,8,CS802,Deep Learning Applications,88,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT032,Student 032,8,CS803,Cyber Forensics,97,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT032,Student 032,8,CS804,Project Phase II,46,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT032,Student 032,8,CS805,Industry Internship Review,55,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE033,Student 033,1,MA101,Calculus and Linear Algebra,90,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE033,Student 033,1,PH101,Engineering Physics,39,100,F
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE033,Student 033,1,CS101,Programming in C,48,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE033,Student 033,1,HS101,Communicative English,57,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE033,Student 033,1,ME101,Engineering Graphics,66,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE034,Student 034,2,MA201,Discrete Mathematics,41,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE034,Student 034,2,CS201,Data Structures,50,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE034,Student 034,2,EC201,Digital Logic Design,59,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE034,Student 034,2,EE201,Circuit Theory,68,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE034,Student 034,2,HS201,Professional Communication,77,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH035,Student 035,3,CS301,Database Management Systems,52,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH035,Student 035,3,CS302,Object Oriented Programming,61,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH035,Student 035,3,CS303,Computer Organization,70,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH035,Student 035,3,MA301,Probability and Statistics,79,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH035,Student 035,3,CS304,Operating Systems,88,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL036,Student 036,4,CS401,Design and Analysis of Algorithms,63,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL036,Student 036,4,CS402,Computer Networks,72,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL036,Student 036,4,CS403,Software Engineering,81,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL036,Student 036,4,CS404,Microprocessors and Interfacing,90,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL036,Student 036,4,CS405,Theory of Computation,39,100,F
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE037,Student 037,5,CS501,Web Technologies,74,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE037,Student 037,5,CS502,Compiler Design,83,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE037,Student 037,5,CS503,Machine Learning Fundamentals,92,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE037,Student 037,5,CS504,Cloud Computing,41,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE037,Student 037,5,CS505,Open Elective I,50,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT038,Student 038,6,CS601,Artificial Intelligence,85,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT038,Student 038,6,CS602,Mobile Application Development,94,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT038,Student 038,6,CS603,Information Security,43,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT038,Student 038,6,CS604,Distributed Systems,52,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT038,Student 038,6,CS605,Open Elective II,61,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE039,Student 039,7,CS701,Big Data Analytics,96,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE039,Student 039,7,CS702,Internet of Things,45,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE039,Student 039,7,CS703,DevOps Engineering,54,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE039,Student 039,7,CS704,Data Visualization,63,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE039,Student 039,7,CS705,Project Phase I,72,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE040,Student 040,8,CS801,Blockchain Fundamentals,47,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE040,Student 040,8,CS802,Deep Learning Applications,56,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE040,Student 040,8,CS803,Cyber Forensics,65,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE040,Student 040,8,CS804,Project Phase II,74,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE040,Student 040,8,CS805,Industry Internship Review,83,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH041,Student 041,1,MA101,Calculus and Linear Algebra,58,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH041,Student 041,1,PH101,Engineering Physics,67,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH041,Student 041,1,CS101,Programming in C,76,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH041,Student 041,1,HS101,Communicative English,85,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH041,Student 041,1,ME101,Engineering Graphics,94,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL042,Student 042,2,MA201,Discrete Mathematics,69,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL042,Student 042,2,CS201,Data Structures,78,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL042,Student 042,2,EC201,Digital Logic Design,87,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL042,Student 042,2,EE201,Circuit Theory,96,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL042,Student 042,2,HS201,Professional Communication,45,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE043,Student 043,3,CS301,Database Management Systems,80,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE043,Student 043,3,CS302,Object Oriented Programming,89,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE043,Student 043,3,CS303,Computer Organization,38,100,F
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE043,Student 043,3,MA301,Probability and Statistics,47,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE043,Student 043,3,CS304,Operating Systems,56,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT044,Student 044,4,CS401,Design and Analysis of Algorithms,91,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT044,Student 044,4,CS402,Computer Networks,40,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT044,Student 044,4,CS403,Software Engineering,49,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT044,Student 044,4,CS404,Microprocessors and Interfacing,58,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT044,Student 044,4,CS405,Theory of Computation,67,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE045,Student 045,5,CS501,Web Technologies,42,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE045,Student 045,5,CS502,Compiler Design,51,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE045,Student 045,5,CS503,Machine Learning Fundamentals,60,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE045,Student 045,5,CS504,Cloud Computing,69,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE045,Student 045,5,CS505,Open Elective I,78,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE046,Student 046,6,CS601,Artificial Intelligence,53,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE046,Student 046,6,CS602,Mobile Application Development,62,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE046,Student 046,6,CS603,Information Security,71,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE046,Student 046,6,CS604,Distributed Systems,80,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE046,Student 046,6,CS605,Open Elective II,89,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH047,Student 047,7,CS701,Big Data Analytics,64,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH047,Student 047,7,CS702,Internet of Things,73,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH047,Student 047,7,CS703,DevOps Engineering,82,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH047,Student 047,7,CS704,Data Visualization,91,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH047,Student 047,7,CS705,Project Phase I,40,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL048,Student 048,8,CS801,Blockchain Fundamentals,75,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL048,Student 048,8,CS802,Deep Learning Applications,84,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL048,Student 048,8,CS803,Cyber Forensics,93,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL048,Student 048,8,CS804,Project Phase II,42,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL048,Student 048,8,CS805,Industry Internship Review,51,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE049,Student 049,1,MA101,Calculus and Linear Algebra,86,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE049,Student 049,1,PH101,Engineering Physics,95,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE049,Student 049,1,CS101,Programming in C,44,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE049,Student 049,1,HS101,Communicative English,53,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE049,Student 049,1,ME101,Engineering Graphics,62,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT050,Student 050,2,MA201,Discrete Mathematics,97,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT050,Student 050,2,CS201,Data Structures,46,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT050,Student 050,2,EC201,Digital Logic Design,55,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT050,Student 050,2,EE201,Circuit Theory,64,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT050,Student 050,2,HS201,Professional Communication,73,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE051,Student 051,3,CS301,Database Management Systems,48,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE051,Student 051,3,CS302,Object Oriented Programming,57,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE051,Student 051,3,CS303,Computer Organization,66,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE051,Student 051,3,MA301,Probability and Statistics,75,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE051,Student 051,3,CS304,Operating Systems,84,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE052,Student 052,4,CS401,Design and Analysis of Algorithms,59,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE052,Student 052,4,CS402,Computer Networks,68,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE052,Student 052,4,CS403,Software Engineering,77,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE052,Student 052,4,CS404,Microprocessors and Interfacing,86,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE052,Student 052,4,CS405,Theory of Computation,95,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH053,Student 053,5,CS501,Web Technologies,70,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH053,Student 053,5,CS502,Compiler Design,79,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH053,Student 053,5,CS503,Machine Learning Fundamentals,88,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH053,Student 053,5,CS504,Cloud Computing,97,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH053,Student 053,5,CS505,Open Elective I,46,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL054,Student 054,6,CS601,Artificial Intelligence,81,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL054,Student 054,6,CS602,Mobile Application Development,90,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL054,Student 054,6,CS603,Information Security,39,100,F
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL054,Student 054,6,CS604,Distributed Systems,48,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL054,Student 054,6,CS605,Open Elective II,57,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE055,Student 055,7,CS701,Big Data Analytics,92,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE055,Student 055,7,CS702,Internet of Things,41,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE055,Student 055,7,CS703,DevOps Engineering,50,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE055,Student 055,7,CS704,Data Visualization,59,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE055,Student 055,7,CS705,Project Phase I,68,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT056,Student 056,8,CS801,Blockchain Fundamentals,43,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT056,Student 056,8,CS802,Deep Learning Applications,52,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT056,Student 056,8,CS803,Cyber Forensics,61,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT056,Student 056,8,CS804,Project Phase II,70,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT056,Student 056,8,CS805,Industry Internship Review,79,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE057,Student 057,1,MA101,Calculus and Linear Algebra,54,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE057,Student 057,1,PH101,Engineering Physics,63,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE057,Student 057,1,CS101,Programming in C,72,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE057,Student 057,1,HS101,Communicative English,81,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE057,Student 057,1,ME101,Engineering Graphics,90,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE058,Student 058,2,MA201,Discrete Mathematics,65,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE058,Student 058,2,CS201,Data Structures,74,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE058,Student 058,2,EC201,Digital Logic Design,83,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE058,Student 058,2,EE201,Circuit Theory,92,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE058,Student 058,2,HS201,Professional Communication,41,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH059,Student 059,3,CS301,Database Management Systems,76,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH059,Student 059,3,CS302,Object Oriented Programming,85,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH059,Student 059,3,CS303,Computer Organization,94,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH059,Student 059,3,MA301,Probability and Statistics,43,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH059,Student 059,3,CS304,Operating Systems,52,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL060,Student 060,4,CS401,Design and Analysis of Algorithms,87,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL060,Student 060,4,CS402,Computer Networks,96,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL060,Student 060,4,CS403,Software Engineering,45,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL060,Student 060,4,CS404,Microprocessors and Interfacing,54,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL060,Student 060,4,CS405,Theory of Computation,63,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE061,Student 061,5,CS501,Web Technologies,38,100,F
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE061,Student 061,5,CS502,Compiler Design,47,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE061,Student 061,5,CS503,Machine Learning Fundamentals,56,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE061,Student 061,5,CS504,Cloud Computing,65,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE061,Student 061,5,CS505,Open Elective I,74,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT062,Student 062,6,CS601,Artificial Intelligence,49,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT062,Student 062,6,CS602,Mobile Application Development,58,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT062,Student 062,6,CS603,Information Security,67,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT062,Student 062,6,CS604,Distributed Systems,76,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT062,Student 062,6,CS605,Open Elective II,85,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE063,Student 063,7,CS701,Big Data Analytics,60,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE063,Student 063,7,CS702,Internet of Things,69,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE063,Student 063,7,CS703,DevOps Engineering,78,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE063,Student 063,7,CS704,Data Visualization,87,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE063,Student 063,7,CS705,Project Phase I,96,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE064,Student 064,8,CS801,Blockchain Fundamentals,71,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE064,Student 064,8,CS802,Deep Learning Applications,80,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE064,Student 064,8,CS803,Cyber Forensics,89,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE064,Student 064,8,CS804,Project Phase II,38,100,F
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE064,Student 064,8,CS805,Industry Internship Review,47,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH065,Student 065,1,MA101,Calculus and Linear Algebra,82,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH065,Student 065,1,PH101,Engineering Physics,91,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH065,Student 065,1,CS101,Programming in C,40,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH065,Student 065,1,HS101,Communicative English,49,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH065,Student 065,1,ME101,Engineering Graphics,58,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL066,Student 066,2,MA201,Discrete Mathematics,93,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL066,Student 066,2,CS201,Data Structures,42,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL066,Student 066,2,EC201,Digital Logic Design,51,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL066,Student 066,2,EE201,Circuit Theory,60,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL066,Student 066,2,HS201,Professional Communication,69,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE067,Student 067,3,CS301,Database Management Systems,44,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE067,Student 067,3,CS302,Object Oriented Programming,53,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE067,Student 067,3,CS303,Computer Organization,62,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE067,Student 067,3,MA301,Probability and Statistics,71,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE067,Student 067,3,CS304,Operating Systems,80,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT068,Student 068,4,CS401,Design and Analysis of Algorithms,55,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT068,Student 068,4,CS402,Computer Networks,64,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT068,Student 068,4,CS403,Software Engineering,73,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT068,Student 068,4,CS404,Microprocessors and Interfacing,82,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT068,Student 068,4,CS405,Theory of Computation,91,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE069,Student 069,5,CS501,Web Technologies,66,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE069,Student 069,5,CS502,Compiler Design,75,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE069,Student 069,5,CS503,Machine Learning Fundamentals,84,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE069,Student 069,5,CS504,Cloud Computing,93,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE069,Student 069,5,CS505,Open Elective I,42,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE070,Student 070,6,CS601,Artificial Intelligence,77,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE070,Student 070,6,CS602,Mobile Application Development,86,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE070,Student 070,6,CS603,Information Security,95,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE070,Student 070,6,CS604,Distributed Systems,44,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE070,Student 070,6,CS605,Open Elective II,53,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH071,Student 071,7,CS701,Big Data Analytics,88,100,A+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH071,Student 071,7,CS702,Internet of Things,97,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH071,Student 071,7,CS703,DevOps Engineering,46,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH071,Student 071,7,CS704,Data Visualization,55,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH071,Student 071,7,CS705,Project Phase I,64,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL072,Student 072,8,CS801,Blockchain Fundamentals,39,100,F
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL072,Student 072,8,CS802,Deep Learning Applications,48,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL072,Student 072,8,CS803,Cyber Forensics,57,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL072,Student 072,8,CS804,Project Phase II,66,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL072,Student 072,8,CS805,Industry Internship Review,75,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE073,Student 073,1,MA101,Calculus and Linear Algebra,50,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE073,Student 073,1,PH101,Engineering Physics,59,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE073,Student 073,1,CS101,Programming in C,68,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE073,Student 073,1,HS101,Communicative English,77,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE073,Student 073,1,ME101,Engineering Graphics,86,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT074,Student 074,2,MA201,Discrete Mathematics,61,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT074,Student 074,2,CS201,Data Structures,70,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT074,Student 074,2,EC201,Digital Logic Design,79,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT074,Student 074,2,EE201,Circuit Theory,88,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT074,Student 074,2,HS201,Professional Communication,97,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE075,Student 075,3,CS301,Database Management Systems,72,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE075,Student 075,3,CS302,Object Oriented Programming,81,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE075,Student 075,3,CS303,Computer Organization,90,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE075,Student 075,3,MA301,Probability and Statistics,39,100,F
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE075,Student 075,3,CS304,Operating Systems,48,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE076,Student 076,4,CS401,Design and Analysis of Algorithms,83,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE076,Student 076,4,CS402,Computer Networks,92,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE076,Student 076,4,CS403,Software Engineering,41,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE076,Student 076,4,CS404,Microprocessors and Interfacing,50,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE076,Student 076,4,CS405,Theory of Computation,59,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH077,Student 077,5,CS501,Web Technologies,94,100,O
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH077,Student 077,5,CS502,Compiler Design,43,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH077,Student 077,5,CS503,Machine Learning Fundamentals,52,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH077,Student 077,5,CS504,Cloud Computing,61,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH077,Student 077,5,CS505,Open Elective I,70,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL078,Student 078,6,CS601,Artificial Intelligence,45,100,C
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL078,Student 078,6,CS602,Mobile Application Development,54,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL078,Student 078,6,CS603,Information Security,63,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL078,Student 078,6,CS604,Distributed Systems,72,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL078,Student 078,6,CS605,Open Elective II,81,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE079,Student 079,7,CS701,Big Data Analytics,56,100,B
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE079,Student 079,7,CS702,Internet of Things,65,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE079,Student 079,7,CS703,DevOps Engineering,74,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE079,Student 079,7,CS704,Data Visualization,83,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE079,Student 079,7,CS705,Project Phase I,92,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT080,Student 080,8,CS801,Blockchain Fundamentals,67,100,B+
+North Campus,Engineering,Information Technology,IT,B,2026IT080,Student 080,8,CS802,Deep Learning Applications,76,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT080,Student 080,8,CS803,Cyber Forensics,85,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT080,Student 080,8,CS804,Project Phase II,94,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT080,Student 080,8,CS805,Industry Internship Review,43,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE081,Student 081,1,MA101,Calculus and Linear Algebra,78,100,A
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE081,Student 081,1,PH101,Engineering Physics,87,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE081,Student 081,1,CS101,Programming in C,96,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE081,Student 081,1,HS101,Communicative English,45,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE081,Student 081,1,ME101,Engineering Graphics,54,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE082,Student 082,2,MA201,Discrete Mathematics,89,100,A+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE082,Student 082,2,CS201,Data Structures,38,100,F
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE082,Student 082,2,EC201,Digital Logic Design,47,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE082,Student 082,2,EE201,Circuit Theory,56,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE082,Student 082,2,HS201,Professional Communication,65,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH083,Student 083,3,CS301,Database Management Systems,40,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH083,Student 083,3,CS302,Object Oriented Programming,49,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH083,Student 083,3,CS303,Computer Organization,58,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH083,Student 083,3,MA301,Probability and Statistics,67,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH083,Student 083,3,CS304,Operating Systems,76,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL084,Student 084,4,CS401,Design and Analysis of Algorithms,51,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL084,Student 084,4,CS402,Computer Networks,60,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL084,Student 084,4,CS403,Software Engineering,69,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL084,Student 084,4,CS404,Microprocessors and Interfacing,78,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL084,Student 084,4,CS405,Theory of Computation,87,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE085,Student 085,5,CS501,Web Technologies,62,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE085,Student 085,5,CS502,Compiler Design,71,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE085,Student 085,5,CS503,Machine Learning Fundamentals,80,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE085,Student 085,5,CS504,Cloud Computing,89,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE085,Student 085,5,CS505,Open Elective I,38,100,F
+North Campus,Engineering,Information Technology,IT,B,2026IT086,Student 086,6,CS601,Artificial Intelligence,73,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT086,Student 086,6,CS602,Mobile Application Development,82,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT086,Student 086,6,CS603,Information Security,91,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT086,Student 086,6,CS604,Distributed Systems,40,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT086,Student 086,6,CS605,Open Elective II,49,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE087,Student 087,7,CS701,Big Data Analytics,84,100,A+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE087,Student 087,7,CS702,Internet of Things,93,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE087,Student 087,7,CS703,DevOps Engineering,42,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE087,Student 087,7,CS704,Data Visualization,51,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE087,Student 087,7,CS705,Project Phase I,60,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE088,Student 088,8,CS801,Blockchain Fundamentals,95,100,O
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE088,Student 088,8,CS802,Deep Learning Applications,44,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE088,Student 088,8,CS803,Cyber Forensics,53,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE088,Student 088,8,CS804,Project Phase II,62,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE088,Student 088,8,CS805,Industry Internship Review,71,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH089,Student 089,1,MA101,Calculus and Linear Algebra,46,100,C
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH089,Student 089,1,PH101,Engineering Physics,55,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH089,Student 089,1,CS101,Programming in C,64,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH089,Student 089,1,HS101,Communicative English,73,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH089,Student 089,1,ME101,Engineering Graphics,82,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL090,Student 090,2,MA201,Discrete Mathematics,57,100,B
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL090,Student 090,2,CS201,Data Structures,66,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL090,Student 090,2,EC201,Digital Logic Design,75,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL090,Student 090,2,EE201,Circuit Theory,84,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL090,Student 090,2,HS201,Professional Communication,93,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE091,Student 091,3,CS301,Database Management Systems,68,100,B+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE091,Student 091,3,CS302,Object Oriented Programming,77,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE091,Student 091,3,CS303,Computer Organization,86,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE091,Student 091,3,MA301,Probability and Statistics,95,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE091,Student 091,3,CS304,Operating Systems,44,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT092,Student 092,4,CS401,Design and Analysis of Algorithms,79,100,A
+North Campus,Engineering,Information Technology,IT,B,2026IT092,Student 092,4,CS402,Computer Networks,88,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT092,Student 092,4,CS403,Software Engineering,97,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT092,Student 092,4,CS404,Microprocessors and Interfacing,46,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT092,Student 092,4,CS405,Theory of Computation,55,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE093,Student 093,5,CS501,Web Technologies,90,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE093,Student 093,5,CS502,Compiler Design,39,100,F
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE093,Student 093,5,CS503,Machine Learning Fundamentals,48,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE093,Student 093,5,CS504,Cloud Computing,57,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE093,Student 093,5,CS505,Open Elective I,66,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE094,Student 094,6,CS601,Artificial Intelligence,41,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE094,Student 094,6,CS602,Mobile Application Development,50,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE094,Student 094,6,CS603,Information Security,59,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE094,Student 094,6,CS604,Distributed Systems,68,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE094,Student 094,6,CS605,Open Elective II,77,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH095,Student 095,7,CS701,Big Data Analytics,52,100,B
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH095,Student 095,7,CS702,Internet of Things,61,100,B+
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH095,Student 095,7,CS703,DevOps Engineering,70,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH095,Student 095,7,CS704,Data Visualization,79,100,A
+North Campus,Engineering,Mechanical Engineering,MECH,B,2026MECH095,Student 095,7,CS705,Project Phase I,88,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL096,Student 096,8,CS801,Blockchain Fundamentals,63,100,B+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL096,Student 096,8,CS802,Deep Learning Applications,72,100,A
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL096,Student 096,8,CS803,Cyber Forensics,81,100,A+
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL096,Student 096,8,CS804,Project Phase II,90,100,O
+South Campus,Engineering,Civil Engineering,CIVIL,C,2026CIVIL096,Student 096,8,CS805,Industry Internship Review,39,100,F
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE097,Student 097,1,MA101,Calculus and Linear Algebra,74,100,A
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE097,Student 097,1,PH101,Engineering Physics,83,100,A+
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE097,Student 097,1,CS101,Programming in C,92,100,O
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE097,Student 097,1,HS101,Communicative English,41,100,C
+Main Campus,Engineering,Computer Science and Engineering,CSE,A,2026CSE097,Student 097,1,ME101,Engineering Graphics,50,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT098,Student 098,2,MA201,Discrete Mathematics,85,100,A+
+North Campus,Engineering,Information Technology,IT,B,2026IT098,Student 098,2,CS201,Data Structures,94,100,O
+North Campus,Engineering,Information Technology,IT,B,2026IT098,Student 098,2,EC201,Digital Logic Design,43,100,C
+North Campus,Engineering,Information Technology,IT,B,2026IT098,Student 098,2,EE201,Circuit Theory,52,100,B
+North Campus,Engineering,Information Technology,IT,B,2026IT098,Student 098,2,HS201,Professional Communication,61,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE099,Student 099,3,CS301,Database Management Systems,96,100,O
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE099,Student 099,3,CS302,Object Oriented Programming,45,100,C
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE099,Student 099,3,CS303,Computer Organization,54,100,B
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE099,Student 099,3,MA301,Probability and Statistics,63,100,B+
+South Campus,Engineering,Electronics and Communication Engineering,ECE,C,2026ECE099,Student 099,3,CS304,Operating Systems,72,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE100,Student 100,4,CS401,Design and Analysis of Algorithms,47,100,C
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE100,Student 100,4,CS402,Computer Networks,56,100,B
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE100,Student 100,4,CS403,Software Engineering,65,100,B+
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE100,Student 100,4,CS404,Microprocessors and Interfacing,74,100,A
+Main Campus,Engineering,Electrical and Electronics Engineering,EEE,A,2026EEE100,Student 100,4,CS405,Theory of Computation,83,100,A+

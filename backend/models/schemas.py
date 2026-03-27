@@ -61,6 +61,11 @@ class StudentResponse(BaseModel):
     student_name: str
     email: Optional[str] = None
     institution_id: str
+    campus: Optional[str] = None
+    faculty: Optional[str] = None
+    department: Optional[str] = None
+    branch: Optional[str] = None
+    section: Optional[str] = None
 
 
 # ---- Subject ----
@@ -76,6 +81,7 @@ class SubjectResponse(BaseModel):
 class ResultResponse(BaseModel):
     id: str
     student_id: str
+    upload_batch_id: Optional[str] = None
     subject_code: str
     subject_name: str
     semester: int
@@ -83,6 +89,15 @@ class ResultResponse(BaseModel):
     max_marks: float
     grade: Optional[str] = None
     pass_status: bool
+    campus: Optional[str] = None
+    faculty: Optional[str] = None
+    department: Optional[str] = None
+    branch: Optional[str] = None
+    section: Optional[str] = None
+    register_number: Optional[str] = None
+    student_name: Optional[str] = None
+    file_name: Optional[str] = None
+    created_at: Optional[datetime] = None
 
 
 class SemesterSummary(BaseModel):
@@ -107,6 +122,7 @@ class AdminDashboardStats(BaseModel):
     total_results: int
     overall_pass_percentage: float
     semesters_available: List[int]
+    active_scope_label: str = "Institution-wide"
 
 
 class GradeDistribution(BaseModel):
@@ -131,6 +147,8 @@ class DashboardResponse(BaseModel):
     grade_distribution: List[GradeDistribution]
     subject_performance: List[SubjectPerformance]
     top_performers: List[StudentResponse]
+    filters: "DashboardFilterOptions"
+    section_overview: List["SectionOverview"]
 
 
 # ---- Upload ----
@@ -142,6 +160,45 @@ class UploadResponse(BaseModel):
     status: str
 
 
+class HierarchyFilters(BaseModel):
+    campus: Optional[str] = None
+    faculty: Optional[str] = None
+    department: Optional[str] = None
+    branch: Optional[str] = None
+    section: Optional[str] = None
+
+
+class DashboardFilterOptions(HierarchyFilters):
+    campus_options: List[str] = []
+    faculty_options: List[str] = []
+    department_options: List[str] = []
+    branch_options: List[str] = []
+    section_options: List[str] = []
+
+
+class SectionOverview(BaseModel):
+    campus: Optional[str] = None
+    faculty: Optional[str] = None
+    department: Optional[str] = None
+    branch: Optional[str] = None
+    section: Optional[str] = None
+    total_results: int
+    passed: int
+    pass_percentage: float
+    average_marks: float
+
+
+class UpdateResultRequest(BaseModel):
+    marks_obtained: float = Field(..., ge=0)
+    max_marks: Optional[float] = Field(None, gt=0)
+    grade: Optional[str] = Field(None, max_length=10)
+
+
+class DeleteBatchResponse(BaseModel):
+    deleted_results: int
+    deleted_batch_id: str
+
+
 # ---- AI Chat ----
 class ChatRequest(BaseModel):
     message: str = Field(..., min_length=1, max_length=2000)
@@ -150,3 +207,6 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     query_used: Optional[str] = None
+
+
+DashboardResponse.model_rebuild()

@@ -20,6 +20,11 @@ REQUIRED_COLUMNS = [
     "marks",
 ]
 TEXT_LIMITS = {
+    "campus": 255,
+    "faculty": 255,
+    "department": 255,
+    "branch": 255,
+    "section": 100,
     "register_number": 50,
     "student_name": 255,
     "subject_code": 50,
@@ -42,6 +47,11 @@ VALID_GRADES = {
 
 
 COLUMN_ALIASES = {
+    "campus": ["campus"],
+    "faculty": ["faculty", "school"],
+    "department": ["department", "dept", "department_name"],
+    "branch": ["branch", "program", "course", "specialization"],
+    "section": ["section", "class_section", "group"],
     "register_number": [
         "register_number",
         "register no",
@@ -64,6 +74,7 @@ COLUMN_ALIASES = {
     "semester": ["semester", "sem", "semester_no", "sem_no"],
     "subject_code": [
         "subject_code",
+        "subject_codes",
         "subject code",
         "sub_code",
         "sub code",
@@ -71,6 +82,7 @@ COLUMN_ALIASES = {
     ],
     "subject_name": [
         "subject_name",
+        "subject_names",
         "subject name",
         "sub_name",
         "sub name",
@@ -92,7 +104,7 @@ COLUMN_ALIASES = {
         "out of",
         "total",
     ],
-    "grade": ["grade", "letter_grade", "letter grade"],
+    "grade": ["grade", "grades", "letter_grade", "letter grade"],
 }
 
 
@@ -395,6 +407,24 @@ def _validate_rows(raw_rows: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]]
             max_length=TEXT_LIMITS["subject_name"],
         )
         grade, grade_error = _normalize_grade(raw_row.get("grade"), row_number)
+        campus, campus_error = _normalize_optional_text(
+            raw_row.get("campus"), row_number, "campus", max_length=TEXT_LIMITS["campus"]
+        )
+        faculty, faculty_error = _normalize_optional_text(
+            raw_row.get("faculty"), row_number, "faculty", max_length=TEXT_LIMITS["faculty"]
+        )
+        department, department_error = _normalize_optional_text(
+            raw_row.get("department"),
+            row_number,
+            "department",
+            max_length=TEXT_LIMITS["department"],
+        )
+        branch, branch_error = _normalize_optional_text(
+            raw_row.get("branch"), row_number, "branch", max_length=TEXT_LIMITS["branch"]
+        )
+        section, section_error = _normalize_optional_text(
+            raw_row.get("section"), row_number, "section", max_length=TEXT_LIMITS["section"]
+        )
 
         row_errors = [
             error
@@ -407,6 +437,11 @@ def _validate_rows(raw_rows: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]]
                 max_marks_error,
                 subject_name_error,
                 grade_error,
+                campus_error,
+                faculty_error,
+                department_error,
+                branch_error,
+                section_error,
             ]
             if error
         ]
@@ -443,6 +478,11 @@ def _validate_rows(raw_rows: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]]
             {
                 "register_number": register_number,
                 "student_name": student_name,
+                "campus": campus,
+                "faculty": faculty,
+                "department": department,
+                "branch": branch,
+                "section": section,
                 "semester": semester,
                 "subject_code": subject_code,
                 "subject_name": subject_name,

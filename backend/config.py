@@ -19,7 +19,7 @@ class Settings(BaseSettings):
 
     # App
     APP_NAME: str = "Student Result Analysis Platform"
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000,https://student-results-analysis-platfrom.vercel.app"
     DEBUG: bool = False
 
     class Config:

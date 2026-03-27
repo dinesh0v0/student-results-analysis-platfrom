@@ -13,7 +13,7 @@ export function Sidebar({ role, isOpen, onClose }: SidebarProps) {
   const adminLinks = [
     { to: '/admin', icon: LayoutDashboard, label: 'Dashboard', exact: true },
     { to: '/admin/students', icon: Users, label: 'Students Lookup' },
-    { to: '/admin/upload', icon: UploadCloud, label: 'Upload Results' },
+    { to: '/admin/upload', icon: UploadCloud, label: 'Upload & Manage' },
   ];
 
   const studentLinks = [

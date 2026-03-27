@@ -4,7 +4,23 @@ export interface Institution {
   email: string;
 }
 
-export interface Student {
+export interface HierarchyFilters {
+  campus?: string | null;
+  faculty?: string | null;
+  department?: string | null;
+  branch?: string | null;
+  section?: string | null;
+}
+
+export interface DashboardFilterOptions extends HierarchyFilters {
+  campus_options: string[];
+  faculty_options: string[];
+  department_options: string[];
+  branch_options: string[];
+  section_options: string[];
+}
+
+export interface Student extends HierarchyFilters {
   id: string;
   register_number: string;
   student_name: string;
@@ -20,9 +36,10 @@ export interface Subject {
   max_marks: number;
 }
 
-export interface Result {
+export interface Result extends HierarchyFilters {
   id: string;
   student_id: string;
+  upload_batch_id?: string | null;
   subject_code: string;
   subject_name: string;
   semester: number;
@@ -30,6 +47,10 @@ export interface Result {
   max_marks: number;
   grade?: string;
   pass_status: boolean;
+  register_number?: string;
+  student_name?: string;
+  file_name?: string;
+  created_at?: string;
 }
 
 export interface SemesterSummary {
@@ -53,6 +74,7 @@ export interface AdminDashboardStats {
   total_results: number;
   overall_pass_percentage: number;
   semesters_available: number[];
+  active_scope_label: string;
 }
 
 export interface GradeDistribution {
@@ -72,11 +94,20 @@ export interface SubjectPerformance {
   average_marks: number;
 }
 
+export interface SectionOverview extends HierarchyFilters {
+  total_results: number;
+  passed: number;
+  pass_percentage: number;
+  average_marks: number;
+}
+
 export interface DashboardResponse {
   stats: AdminDashboardStats;
   grade_distribution: GradeDistribution[];
   subject_performance: SubjectPerformance[];
   top_performers: Student[];
+  filters: DashboardFilterOptions;
+  section_overview: SectionOverview[];
 }
 
 export interface UploadResponse {
