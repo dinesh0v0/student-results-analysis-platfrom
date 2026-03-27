@@ -21,6 +21,7 @@ CREATE TABLE public.institutions (
 );
 
 ALTER TABLE public.institutions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.institutions FORCE ROW LEVEL SECURITY;
 
 -- Admins can only see/manage their own institution
 CREATE POLICY "Admins can view own institution"
@@ -29,10 +30,10 @@ CREATE POLICY "Admins can view own institution"
 
 CREATE POLICY "Admins can update own institution"
     ON public.institutions FOR UPDATE
-    USING (admin_user_id = auth.uid());
+    USING (admin_user_id = auth.uid())
+    WITH CHECK (admin_user_id = auth.uid());
 
--- Service role inserts during registration (no INSERT policy needed for anon)
-CREATE POLICY "Service role can insert institutions"
+CREATE POLICY "Admins can insert own institution"
     ON public.institutions FOR INSERT
     WITH CHECK (admin_user_id = auth.uid());
 
@@ -52,6 +53,7 @@ CREATE TABLE public.students (
 );
 
 ALTER TABLE public.students ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.students FORCE ROW LEVEL SECURITY;
 
 -- Admins see students in their institution
 CREATE POLICY "Admins can view institution students"
@@ -94,7 +96,8 @@ CREATE POLICY "Students can view own record"
 -- Students can update their own email/profile
 CREATE POLICY "Students can update own record"
     ON public.students FOR UPDATE
-    USING (auth_user_id = auth.uid());
+    USING (auth_user_id = auth.uid())
+    WITH CHECK (auth_user_id = auth.uid());
 
 -- =============================================================================
 -- TABLE: subjects
@@ -105,15 +108,45 @@ CREATE TABLE public.subjects (
     subject_code TEXT NOT NULL,
     subject_name TEXT NOT NULL,
     semester INT NOT NULL CHECK (semester > 0 AND semester <= 12),
-    max_marks INT DEFAULT 100,
+    max_marks NUMERIC(5,2) NOT NULL DEFAULT 100 CHECK (max_marks > 0),
     created_at TIMESTAMPTZ DEFAULT NOW(),
     UNIQUE(institution_id, subject_code, semester)
 );
 
 ALTER TABLE public.subjects ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.subjects FORCE ROW LEVEL SECURITY;
 
-CREATE POLICY "Admins can manage institution subjects"
-    ON public.subjects FOR ALL
+CREATE POLICY "Admins can view institution subjects"
+    ON public.subjects FOR SELECT
+    USING (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can insert institution subjects"
+    ON public.subjects FOR INSERT
+    WITH CHECK (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can update institution subjects"
+    ON public.subjects FOR UPDATE
+    USING (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    )
+    WITH CHECK (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can delete institution subjects"
+    ON public.subjects FOR DELETE
     USING (
         institution_id IN (
             SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
@@ -137,19 +170,49 @@ CREATE TABLE public.results (
     student_id UUID NOT NULL REFERENCES public.students(id) ON DELETE CASCADE,
     subject_id UUID NOT NULL REFERENCES public.subjects(id) ON DELETE CASCADE,
     semester INT NOT NULL CHECK (semester > 0 AND semester <= 12),
-    marks_obtained NUMERIC(5,2),
-    max_marks NUMERIC(5,2) DEFAULT 100,
+    marks_obtained NUMERIC(5,2) CHECK (marks_obtained IS NULL OR marks_obtained >= 0),
+    max_marks NUMERIC(5,2) NOT NULL DEFAULT 100 CHECK (max_marks > 0),
     grade TEXT,
     pass_status BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMPTZ DEFAULT NOW(),
+    CHECK (marks_obtained IS NULL OR marks_obtained <= max_marks),
     UNIQUE(student_id, subject_id, semester)
 );
 
 ALTER TABLE public.results ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.results FORCE ROW LEVEL SECURITY;
 
--- Admins can manage results for their institution
-CREATE POLICY "Admins can manage institution results"
-    ON public.results FOR ALL
+CREATE POLICY "Admins can view institution results"
+    ON public.results FOR SELECT
+    USING (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can insert institution results"
+    ON public.results FOR INSERT
+    WITH CHECK (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can update institution results"
+    ON public.results FOR UPDATE
+    USING (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    )
+    WITH CHECK (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can delete institution results"
+    ON public.results FOR DELETE
     USING (
         institution_id IN (
             SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
@@ -181,9 +244,39 @@ CREATE TABLE public.upload_batches (
 );
 
 ALTER TABLE public.upload_batches ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.upload_batches FORCE ROW LEVEL SECURITY;
 
-CREATE POLICY "Admins can manage own upload batches"
-    ON public.upload_batches FOR ALL
+CREATE POLICY "Admins can view own upload batches"
+    ON public.upload_batches FOR SELECT
+    USING (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can insert own upload batches"
+    ON public.upload_batches FOR INSERT
+    WITH CHECK (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can update own upload batches"
+    ON public.upload_batches FOR UPDATE
+    USING (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    )
+    WITH CHECK (
+        institution_id IN (
+            SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
+        )
+    );
+
+CREATE POLICY "Admins can delete own upload batches"
+    ON public.upload_batches FOR DELETE
     USING (
         institution_id IN (
             SELECT id FROM public.institutions WHERE admin_user_id = auth.uid()
@@ -204,6 +297,7 @@ CREATE TABLE public.chat_history (
 );
 
 ALTER TABLE public.chat_history ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.chat_history FORCE ROW LEVEL SECURITY;
 
 CREATE POLICY "Users can view own chat history"
     ON public.chat_history FOR SELECT
@@ -235,6 +329,108 @@ STABLE
 SECURITY DEFINER
 AS $$
     SELECT * FROM public.students WHERE auth_user_id = auth.uid() LIMIT 1;
+$$;
+
+-- =============================================================================
+-- FUNCTION: Process a validated upload batch atomically
+-- =============================================================================
+CREATE OR REPLACE FUNCTION public.process_result_upload_batch(
+    p_institution_id UUID,
+    p_rows JSONB
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    row_data JSONB;
+    v_student_id UUID;
+    v_subject_id UUID;
+    v_processed_count INT := 0;
+BEGIN
+    IF p_rows IS NULL OR jsonb_typeof(p_rows) <> 'array' OR jsonb_array_length(p_rows) = 0 THEN
+        RAISE EXCEPTION 'Upload payload is empty';
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1
+        FROM public.institutions
+        WHERE id = p_institution_id
+          AND admin_user_id = auth.uid()
+    ) THEN
+        RAISE EXCEPTION 'You are not authorized to upload results for this institution';
+    END IF;
+
+    FOR row_data IN SELECT value FROM jsonb_array_elements(p_rows)
+    LOOP
+        INSERT INTO public.students (
+            institution_id,
+            register_number,
+            student_name
+        ) VALUES (
+            p_institution_id,
+            trim(row_data->>'register_number'),
+            trim(row_data->>'student_name')
+        )
+        ON CONFLICT (institution_id, register_number)
+        DO UPDATE SET
+            student_name = EXCLUDED.student_name,
+            updated_at = NOW()
+        RETURNING id INTO v_student_id;
+
+        INSERT INTO public.subjects (
+            institution_id,
+            subject_code,
+            subject_name,
+            semester,
+            max_marks
+        ) VALUES (
+            p_institution_id,
+            trim(row_data->>'subject_code'),
+            trim(COALESCE(row_data->>'subject_name', row_data->>'subject_code')),
+            (row_data->>'semester')::INT,
+            (row_data->>'max_marks')::NUMERIC(5,2)
+        )
+        ON CONFLICT (institution_id, subject_code, semester)
+        DO UPDATE SET
+            subject_name = EXCLUDED.subject_name,
+            max_marks = EXCLUDED.max_marks
+        RETURNING id INTO v_subject_id;
+
+        INSERT INTO public.results (
+            institution_id,
+            student_id,
+            subject_id,
+            semester,
+            marks_obtained,
+            max_marks,
+            grade,
+            pass_status
+        ) VALUES (
+            p_institution_id,
+            v_student_id,
+            v_subject_id,
+            (row_data->>'semester')::INT,
+            (row_data->>'marks')::NUMERIC(5,2),
+            (row_data->>'max_marks')::NUMERIC(5,2),
+            trim(COALESCE(row_data->>'grade', 'N/A')),
+            COALESCE((row_data->>'pass_status')::BOOLEAN, FALSE)
+        )
+        ON CONFLICT (student_id, subject_id, semester)
+        DO UPDATE SET
+            institution_id = EXCLUDED.institution_id,
+            marks_obtained = EXCLUDED.marks_obtained,
+            max_marks = EXCLUDED.max_marks,
+            grade = EXCLUDED.grade,
+            pass_status = EXCLUDED.pass_status;
+
+        v_processed_count := v_processed_count + 1;
+    END LOOP;
+
+    RETURN jsonb_build_object(
+        'records_processed', v_processed_count,
+        'status', 'completed'
+    );
+END;
 $$;
 
 -- =============================================================================

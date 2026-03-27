@@ -17,7 +17,7 @@ export function DashboardLayout({ requiredRole }: DashboardLayoutProps) {
   if (isLoading) return <FullPageLoader />;
 
   if (!user) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={requiredRole === 'admin' ? '/auth/admin/login' : '/auth/student/login'} replace />;
   }
 
   if (user.role !== requiredRole) {

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -10,54 +10,43 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+function getInitialTheme(): Theme {
+  const savedTheme = localStorage.getItem('theme');
+  return (savedTheme as Theme) || 'system';
+}
+
+function getSystemPrefersDark() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('theme');
-    return (saved as Theme) || 'system';
-  });
-  
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [systemPrefersDark, setSystemPrefersDark] = useState<boolean>(getSystemPrefersDark);
+
+  const isDark = useMemo(
+    () => (theme === 'system' ? systemPrefersDark : theme === 'dark'),
+    [theme, systemPrefersDark]
+  );
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
-    
+
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
+    root.classList.add(isDark ? 'dark' : 'light');
 
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.classList.add(systemTheme);
-      setIsDark(systemTheme === 'dark');
-    } else {
-      root.classList.add(theme);
-      setIsDark(theme === 'dark');
-    }
-  }, [theme]);
+    document.body.classList.toggle('dark', isDark);
+  }, [theme, isDark]);
 
-  // Listen for system preference changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => {
-      if (theme === 'system') {
-        const root = window.document.documentElement;
-        root.classList.remove('light', 'dark');
-        root.classList.add(mediaQuery.matches ? 'dark' : 'light');
-        setIsDark(mediaQuery.matches);
-      }
+    const handleChange = (event: MediaQueryListEvent) => {
+      setSystemPrefersDark(event.matches);
     };
-    
+
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [theme]);
-
-  // Apply dark class to body for Recharts and other external tools
-  useEffect(() => {
-    if (isDark) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-  }, [isDark]);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, isDark }}>

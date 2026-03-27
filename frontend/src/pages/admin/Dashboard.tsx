@@ -1,47 +1,92 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Legend,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
+import { BookOpen, FileCheck, Target, Users } from 'lucide-react';
+
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
 import { FullPageLoader } from '../../components/ui/LoadingSpinner';
-import { DashboardResponse, AdminDashboardStats } from '../../types';
-import toast from 'react-hot-toast';
-import api from '../../lib/api';
-import { Users, BookOpen, FileCheck, Target } from 'lucide-react';
-import { 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart, Line, Legend
-} from 'recharts';
+import { StatusMessage } from '../../components/ui/StatusMessage';
 import { useTheme } from '../../contexts/ThemeContext';
+import api, { getApiErrorMessage, isRequestCanceled } from '../../lib/api';
+import { DashboardResponse } from '../../types';
 
 const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#64748b'];
 
 export default function AdminDashboard() {
   const [data, setData] = useState<DashboardResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
   const [semester, setSemester] = useState<number | 'all'>('all');
+  const [retryToken, setRetryToken] = useState(0);
   const { isDark } = useTheme();
 
-  const fetchDashboard = async (sem: number | 'all') => {
-    setIsLoading(true);
-    try {
-      const url = sem === 'all' ? '/api/admin/dashboard' : `/api/admin/dashboard?semester=${sem}`;
-      const response = await api.get(url);
-      setData(response.data);
-    } catch (error: any) {
-      toast.error('Failed to load dashboard data.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
-    fetchDashboard(semester);
-  }, [semester]);
+    const controller = new AbortController();
 
-  if (isLoading && !data) return <FullPageLoader />;
-  if (!data) return <div className="text-center p-8">No data available. Please upload results.</div>;
+    const loadDashboard = async () => {
+      setIsLoading(true);
+      setErrorMessage('');
+
+      try {
+        const url = semester === 'all' ? '/api/admin/dashboard' : `/api/admin/dashboard?semester=${semester}`;
+        const response = await api.get(url, { signal: controller.signal });
+        setData(response.data);
+      } catch (error) {
+        if (isRequestCanceled(error)) {
+          return;
+        }
+
+        setErrorMessage(
+          getApiErrorMessage(error, 'Unable to load dashboard data right now.')
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadDashboard();
+    return () => controller.abort();
+  }, [semester, retryToken]);
+
+  if (isLoading && !data) {
+    return <FullPageLoader />;
+  }
+
+  if (errorMessage && !data) {
+    return (
+      <StatusMessage
+        title="Dashboard unavailable"
+        message={errorMessage}
+        variant="error"
+        actionLabel="Retry"
+        onAction={() => setRetryToken((value) => value + 1)}
+      />
+    );
+  }
+
+  if (!data) {
+    return (
+      <StatusMessage
+        title="No data available"
+        message="Upload validated results to populate the institution dashboard."
+        actionLabel="Retry"
+        onAction={() => setRetryToken((value) => value + 1)}
+      />
+    );
+  }
 
   const { stats, grade_distribution, subject_performance, top_performers } = data;
-
-  // Custom Tooltip Style
   const customTooltipStyle = {
     backgroundColor: isDark ? '#1e293b' : '#ffffff',
     borderColor: isDark ? '#334155' : '#e2e8f0',
@@ -52,40 +97,51 @@ export default function AdminDashboard() {
 
   return (
     <div className="space-y-6">
-      
-      {/* Header & Filter */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      {errorMessage ? (
+        <StatusMessage
+          title="Showing cached dashboard data"
+          message={errorMessage}
+          variant="error"
+          actionLabel="Retry"
+          onAction={() => setRetryToken((value) => value + 1)}
+        />
+      ) : null}
+
+      <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Institution Overview</h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">Track and analyze overall academic performance.</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            Track and analyze overall academic performance.
+          </p>
         </div>
-        
+
         <div className="flex items-center gap-3">
           <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Filter:</label>
-          <select 
-            value={semester} 
-            onChange={(e) => setSemester(e.target.value === 'all' ? 'all' : Number(e.target.value))}
-            className="input-field py-1.5 w-32"
+          <select
+            value={semester}
+            onChange={(event) =>
+              setSemester(event.target.value === 'all' ? 'all' : Number(event.target.value))
+            }
+            className="input-field w-32 py-1.5"
           >
             <option value="all">All Semesters</option>
-            {stats.semesters_available.map(sem => (
-              <option key={sem} value={sem}>Semester {sem}</option>
+            {stats.semesters_available.map((value) => (
+              <option key={value} value={value}>
+                Semester {value}
+              </option>
             ))}
           </select>
         </div>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-slide-up">
+      <div className="grid grid-cols-1 gap-4 animate-slide-up sm:grid-cols-2 lg:grid-cols-4">
         <StatCard title="Total Students" value={stats.total_students} icon={Users} color="bg-indigo-100 text-indigo-600" darkColor="dark:bg-indigo-900/50 dark:text-indigo-400" />
         <StatCard title="Subjects Taught" value={stats.total_subjects} icon={BookOpen} color="bg-blue-100 text-blue-600" darkColor="dark:bg-blue-900/50 dark:text-blue-400" />
         <StatCard title="Results Processed" value={stats.total_results} icon={FileCheck} color="bg-emerald-100 text-emerald-600" darkColor="dark:bg-emerald-900/50 dark:text-emerald-400" />
         <StatCard title="Overall Pass Rate" value={`${stats.overall_pass_percentage}%`} icon={Target} color="bg-purple-100 text-purple-600" darkColor="dark:bg-purple-900/50 dark:text-purple-400" />
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-        
-        {/* Grade Distribution */}
+      <div className="grid gap-6 animate-slide-up lg:grid-cols-3" style={{ animationDelay: '0.1s' }}>
         <Card className="lg:col-span-1">
           <CardHeader>
             <CardTitle>Grade Distribution</CardTitle>
@@ -106,7 +162,7 @@ export default function AdminDashboard() {
                       paddingAngle={5}
                     >
                       {grade_distribution.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        <Cell key={`${entry.grade}-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Pie>
                     <Tooltip contentStyle={customTooltipStyle} itemStyle={{ color: isDark ? '#fff' : '#000' }} />
@@ -115,12 +171,11 @@ export default function AdminDashboard() {
                 </ResponsiveContainer>
               </div>
             ) : (
-              <div className="h-64 flex items-center justify-center text-slate-400">No grades data</div>
+              <div className="flex h-64 items-center justify-center text-slate-400">No grades data</div>
             )}
           </CardContent>
         </Card>
 
-        {/* Subject Performance */}
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle>Subject Performance (Pass %)</CardTitle>
@@ -139,21 +194,20 @@ export default function AdminDashboard() {
                 </ResponsiveContainer>
               </div>
             ) : (
-              <div className="h-64 flex items-center justify-center text-slate-400">No subject data</div>
+              <div className="flex h-64 items-center justify-center text-slate-400">No subject data</div>
             )}
           </CardContent>
         </Card>
       </div>
 
-      {/* Top Performers Table */}
-      <Card className="animate-slide-up overflow-hidden" style={{ animationDelay: '0.2s' }}>
-        <CardHeader className="bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-100 dark:border-slate-800">
+      <Card className="overflow-hidden animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <CardHeader className="border-b border-slate-100 bg-slate-50/50 dark:border-slate-800 dark:bg-slate-900/50">
           <CardTitle>Top Performing Students</CardTitle>
         </CardHeader>
-        <CardContent className="p-0 overflow-x-auto">
+        <CardContent className="overflow-x-auto p-0">
           {top_performers.length > 0 ? (
-            <table className="w-full text-sm text-left">
-              <thead className="text-xs text-slate-500 uppercase bg-slate-50 dark:bg-slate-900 dark:text-slate-400">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-slate-50 text-xs uppercase text-slate-500 dark:bg-slate-900 dark:text-slate-400">
                 <tr>
                   <th className="px-6 py-4 font-medium">Rank</th>
                   <th className="px-6 py-4 font-medium">Register No.</th>
@@ -161,11 +215,11 @@ export default function AdminDashboard() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                {top_performers.map((student, i) => (
-                  <tr key={student.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                    <td className="px-6 py-4 font-bold text-indigo-600 dark:text-indigo-400">#{i + 1}</td>
+                {top_performers.map((student, index) => (
+                  <tr key={student.id} className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td className="px-6 py-4 font-bold text-indigo-600 dark:text-indigo-400">#{index + 1}</td>
                     <td className="px-6 py-4 font-mono">{student.register_number}</td>
-                    <td className="px-6 py-4 font-medium text-slate-900 dark:text-white capitalize">{student.student_name}</td>
+                    <td className="px-6 py-4 font-medium capitalize text-slate-900 dark:text-white">{student.student_name}</td>
                   </tr>
                 ))}
               </tbody>
@@ -179,15 +233,23 @@ export default function AdminDashboard() {
   );
 }
 
-function StatCard({ title, value, icon: Icon, color, darkColor }: any) {
+interface StatCardProps {
+  title: string;
+  value: string | number;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  darkColor: string;
+}
+
+function StatCard({ title, value, icon: Icon, color, darkColor }: StatCardProps) {
   return (
     <Card className="flex items-center gap-4 p-5">
-      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${color} ${darkColor}`}>
-        <Icon className="w-6 h-6" />
+      <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color} ${darkColor}`}>
+        <Icon className="h-6 w-6" />
       </div>
       <div>
         <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{title}</p>
-        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">{value}</h3>
+        <h3 className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{value}</h3>
       </div>
     </Card>
   );

@@ -5,7 +5,7 @@ import { Button } from '../../components/ui/Button';
 import { useAuth } from '../../contexts/AuthContext';
 import { Building2, Mail, Lock, GraduationCap } from 'lucide-react';
 import toast from 'react-hot-toast';
-import api from '../../lib/api';
+import api, { getApiErrorMessage } from '../../lib/api';
 
 export default function AdminSignup() {
   const navigate = useNavigate();
@@ -50,8 +50,8 @@ export default function AdminSignup() {
 
       toast.success('Registration successful! Welcome to ResultSphere.');
       navigate('/admin');
-    } catch (error: any) {
-      toast.error(error.response?.data?.detail || 'Registration failed. Please try again.');
+    } catch (error) {
+      toast.error(getApiErrorMessage(error, 'Registration failed. Please try again.'));
     } finally {
       setIsLoading(false);
     }

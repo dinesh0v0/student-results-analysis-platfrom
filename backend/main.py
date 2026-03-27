@@ -1,8 +1,10 @@
 # =============================================================================
 # FastAPI Main Application
 # =============================================================================
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, status
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from config import get_settings
 from routers import auth, admin, student, ai_assistant
 
@@ -31,6 +33,26 @@ app.include_router(auth.router)
 app.include_router(admin.router)
 app.include_router(student.router)
 app.include_router(ai_assistant.router)
+
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    """Return a concise validation response without leaking internals."""
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content={
+            "detail": "The request payload is invalid. Please review the submitted fields and try again."
+        },
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception):
+    """Catch unexpected server errors with a stable response shape."""
+    return JSONResponse(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        content={"detail": "An unexpected server error occurred. Please try again shortly."},
+    )
 
 
 @app.get("/")

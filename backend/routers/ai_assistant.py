@@ -1,13 +1,56 @@
-# =============================================================================
-# AI Assistant Router
-# =============================================================================
-from fastapi import APIRouter, Depends, HTTPException
-from auth import get_current_user, AuthenticatedUser
+from collections import defaultdict, deque
+import time
+
+from fastapi import APIRouter, Depends, HTTPException, status
+
+from auth import AuthenticatedUser, get_current_user, require_role
 from models.schemas import ChatRequest, ChatResponse
-from services.ai_service import admin_chat, student_chat
-from services.supabase_client import supabase_admin
+from services.ai_service import (
+    AI_OVERLOADED_MESSAGE,
+    admin_chat,
+    student_chat,
+)
+from services.supabase_client import get_authenticated_client
 
 router = APIRouter(prefix="/api/ai", tags=["AI Assistant"])
+
+RATE_LIMIT_WINDOW_SECONDS = 60
+RATE_LIMIT_REQUESTS = 8
+_rate_limit_buckets: dict[str, deque[float]] = defaultdict(deque)
+
+
+def _enforce_rate_limit(user_id: str) -> None:
+    now = time.time()
+    bucket = _rate_limit_buckets[user_id]
+    while bucket and now - bucket[0] > RATE_LIMIT_WINDOW_SECONDS:
+        bucket.popleft()
+
+    if len(bucket) >= RATE_LIMIT_REQUESTS:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail=AI_OVERLOADED_MESSAGE,
+        )
+
+    bucket.append(now)
+
+
+def _store_chat_history(client, user_id: str, institution_id: str, role: str, message: str, response: str) -> None:
+    try:
+        (
+            client.table("chat_history")
+            .insert(
+                {
+                    "user_id": user_id,
+                    "institution_id": institution_id,
+                    "role": role,
+                    "message": message,
+                    "response": response,
+                }
+            )
+            .execute()
+        )
+    except Exception:
+        return
 
 
 @router.post("/admin/chat", response_model=ChatResponse)
@@ -15,25 +58,35 @@ async def admin_ai_chat(
     request: ChatRequest,
     user: AuthenticatedUser = Depends(get_current_user),
 ):
-    """Admin AI assistant — answers questions about institutional data."""
+    """Answer admin questions about institution-scoped academic analytics."""
+    require_role(user, "admin")
+    _enforce_rate_limit(user.user_id)
+    client = get_authenticated_client(user.access_token)
+
     try:
-        # Get institution ID
-        inst_resp = supabase_admin.table("institutions") \
-            .select("id") \
-            .eq("admin_user_id", user.user_id) \
-            .single() \
+        institution_resp = (
+            client.table("institutions")
+            .select("id")
+            .eq("admin_user_id", user.user_id)
+            .limit(1)
             .execute()
+        )
+    except Exception:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Unable to load institution context for the AI assistant.",
+        )
 
-        if not inst_resp.data:
-            raise HTTPException(status_code=403, detail="No institution found")
+    if not institution_resp.data:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="No institution is linked to this admin account.",
+        )
 
-        institution_id = inst_resp.data["id"]
-        result = await admin_chat(request.message, institution_id)
-        return ChatResponse(**result)
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"AI error: {str(e)}")
+    institution_id = institution_resp.data[0]["id"]
+    result = await admin_chat(request.message, institution_id, client)
+    _store_chat_history(client, user.user_id, institution_id, "admin", request.message, result["response"])
+    return ChatResponse(**result)
 
 
 @router.post("/student/chat", response_model=ChatResponse)
@@ -41,24 +94,39 @@ async def student_ai_chat(
     request: ChatRequest,
     user: AuthenticatedUser = Depends(get_current_user),
 ):
-    """Student AI assistant — answers questions about the student's own data only."""
+    """Answer student questions about the student's own academic data."""
+    require_role(user, "student")
+    _enforce_rate_limit(user.user_id)
+    client = get_authenticated_client(user.access_token)
+
     try:
-        # Get student record
-        student_resp = supabase_admin.table("students") \
-            .select("id, institution_id") \
-            .eq("auth_user_id", user.user_id) \
-            .single() \
+        student_resp = (
+            client.table("students")
+            .select("id, institution_id")
+            .eq("auth_user_id", user.user_id)
+            .limit(1)
             .execute()
+        )
+    except Exception:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Unable to load student context for the AI assistant.",
+        )
 
-        if not student_resp.data:
-            raise HTTPException(status_code=403, detail="No student profile found")
+    if not student_resp.data:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="No student profile is linked to this account.",
+        )
 
-        student_id = student_resp.data["id"]
-        institution_id = student_resp.data["institution_id"]
-
-        result = await student_chat(request.message, student_id, institution_id)
-        return ChatResponse(**result)
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"AI error: {str(e)}")
+    student = student_resp.data[0]
+    result = await student_chat(request.message, student["id"], client)
+    _store_chat_history(
+        client,
+        user.user_id,
+        student["institution_id"],
+        "student",
+        request.message,
+        result["response"],
+    )
+    return ChatResponse(**result)

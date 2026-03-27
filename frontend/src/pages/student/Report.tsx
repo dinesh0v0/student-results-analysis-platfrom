@@ -4,7 +4,7 @@ import { Button } from '../../components/ui/Button';
 import { AccountHeader } from './AccountHeader';
 import { Download, FileText, Printer, Mail } from 'lucide-react';
 import toast from 'react-hot-toast';
-import api from '../../lib/api';
+import api, { getApiErrorMessage } from '../../lib/api';
 
 export default function StudentReport() {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -32,7 +32,10 @@ export default function StudentReport() {
       
       toast.success('Report downloaded successfully!', { id: downloadToast });
     } catch (error) {
-      toast.error('Failed to generate PDF. Please try again.', { id: downloadToast });
+      toast.error(
+        getApiErrorMessage(error, 'Failed to generate PDF. Please try again.'),
+        { id: downloadToast }
+      );
     } finally {
       setIsDownloading(false);
     }

@@ -5,7 +5,7 @@ import { Button } from '../../components/ui/Button';
 import { useAuth } from '../../contexts/AuthContext';
 import { Mail, Lock, ShieldAlert } from 'lucide-react';
 import toast from 'react-hot-toast';
-import api from '../../lib/api';
+import api, { getApiErrorMessage } from '../../lib/api';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -36,8 +36,8 @@ export default function AdminLogin() {
 
       toast.success('Login successful!');
       navigate('/admin');
-    } catch (error: any) {
-      toast.error(error.response?.data?.detail || 'Invalid email or password.');
+    } catch (error) {
+      toast.error(getApiErrorMessage(error, 'Invalid email or password.'));
     } finally {
       setIsLoading(false);
     }

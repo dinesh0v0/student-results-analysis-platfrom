@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
-import { BarChart3, ShieldCheck, Zap, ArrowRight, Bot } from 'lucide-react';
+import { ArrowRight, BarChart3, Bot, ShieldCheck } from 'lucide-react';
 
 export default function Landing() {
   return (

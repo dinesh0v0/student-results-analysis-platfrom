@@ -1,211 +1,491 @@
-# =============================================================================
-# Data Processor — CSV/XLSX Parsing & Validation Using Pandas
-# =============================================================================
-import pandas as pd
+import csv
 import io
-from typing import Tuple, List, Dict, Any
+import re
+from decimal import Decimal, InvalidOperation
+from typing import Any, Dict, List, Tuple
+
 from fastapi import UploadFile
+from openpyxl import load_workbook
 
 
-# Expected column name mappings (case-insensitive, stripped)
+MAX_UPLOAD_BYTES = 5 * 1024 * 1024
+MAX_UPLOAD_ROWS = 5000
+DEFAULT_MAX_MARKS = 100.0
+PASS_PERCENTAGE = 40.0
+REQUIRED_COLUMNS = [
+    "register_number",
+    "student_name",
+    "semester",
+    "subject_code",
+    "marks",
+]
+TEXT_LIMITS = {
+    "register_number": 50,
+    "student_name": 255,
+    "subject_code": 50,
+    "subject_name": 255,
+}
+VALID_GRADES = {
+    "O",
+    "A+",
+    "A",
+    "B+",
+    "B",
+    "C",
+    "F",
+    "P",
+    "PASS",
+    "FAIL",
+    "AB",
+    "N/A",
+}
+
+
 COLUMN_ALIASES = {
-    "register_number": ["register_number", "reg_no", "reg no", "roll_number", "roll no", "rollno", "registration_number", "enrollment_no"],
-    "student_name": ["student_name", "name", "student name", "full_name", "full name"],
+    "register_number": [
+        "register_number",
+        "register no",
+        "register_no",
+        "reg_no",
+        "reg no",
+        "roll_number",
+        "roll no",
+        "rollno",
+        "registration_number",
+        "enrollment_no",
+    ],
+    "student_name": [
+        "student_name",
+        "student name",
+        "name",
+        "full_name",
+        "full name",
+    ],
     "semester": ["semester", "sem", "semester_no", "sem_no"],
-    "subject_code": ["subject_code", "sub_code", "subject code", "sub code", "course_code"],
-    "subject_name": ["subject_name", "sub_name", "subject name", "sub name", "course_name", "course name"],
-    "marks": ["marks", "marks_obtained", "marks obtained", "score", "total_marks", "obtained_marks"],
-    "max_marks": ["max_marks", "max marks", "total", "out_of", "out of", "maximum_marks"],
+    "subject_code": [
+        "subject_code",
+        "subject code",
+        "sub_code",
+        "sub code",
+        "course_code",
+    ],
+    "subject_name": [
+        "subject_name",
+        "subject name",
+        "sub_name",
+        "sub name",
+        "course_name",
+        "course name",
+    ],
+    "marks": [
+        "marks",
+        "marks_obtained",
+        "marks obtained",
+        "score",
+        "obtained_marks",
+    ],
+    "max_marks": [
+        "max_marks",
+        "max marks",
+        "maximum_marks",
+        "out_of",
+        "out of",
+        "total",
+    ],
     "grade": ["grade", "letter_grade", "letter grade"],
 }
 
 
-def _normalize_column_name(col: str) -> str:
-    """Strip whitespace and lowercase a column name."""
-    return col.strip().lower().replace(" ", "_")
+def _normalize_column_name(value: Any) -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"[^a-z0-9]+", "_", text)
+    return text.strip("_")
 
 
-def _map_columns(df: pd.DataFrame) -> Tuple[pd.DataFrame, List[str]]:
-    """
-    Map uploaded DataFrame columns to standard names.
-    Returns the renamed DataFrame and a list of warnings.
-    """
-    warnings = []
-    # Normalize all column names
-    df.columns = [_normalize_column_name(c) for c in df.columns]
-
-    mapped = {}
+def _build_alias_lookup() -> Dict[str, str]:
+    alias_lookup: Dict[str, str] = {}
     for standard_name, aliases in COLUMN_ALIASES.items():
-        found = False
+        alias_lookup[_normalize_column_name(standard_name)] = standard_name
         for alias in aliases:
-            normalized_alias = _normalize_column_name(alias)
-            if normalized_alias in df.columns:
-                mapped[normalized_alias] = standard_name
-                found = True
-                break
-        if not found and standard_name in ["register_number", "student_name", "semester", "subject_code", "marks"]:
-            warnings.append(f"Required column '{standard_name}' not found. Expected one of: {aliases}")
-
-    df = df.rename(columns=mapped)
-    return df, warnings
+            alias_lookup[_normalize_column_name(alias)] = standard_name
+    return alias_lookup
 
 
-def _validate_rows(df: pd.DataFrame) -> Tuple[pd.DataFrame, List[str]]:
-    """
-    Validate individual rows for correctness.
-    Returns cleaned DataFrame and list of error messages.
-    """
-    errors = []
-    valid_mask = pd.Series([True] * len(df), index=df.index)
+ALIAS_LOOKUP = _build_alias_lookup()
 
-    # Drop completely empty rows
-    df = df.dropna(how="all").reset_index(drop=True)
 
-    # Check required fields
-    required = ["register_number", "student_name", "semester", "subject_code"]
-    for col in required:
-        if col in df.columns:
-            missing = df[col].isna() | (df[col].astype(str).str.strip() == "")
-            for idx in df[missing].index:
-                errors.append(f"Row {idx + 2}: Missing '{col}'")
-                valid_mask[idx] = False
+def _resolve_headers(raw_headers: List[Any]) -> Tuple[List[str], List[str]]:
+    normalized_headers = [_normalize_column_name(header) for header in raw_headers]
+    resolved_headers: List[str] = []
+    seen_headers: set[str] = set()
+    errors: List[str] = []
 
-    # Validate semester is numeric
-    if "semester" in df.columns:
-        for idx, val in df["semester"].items():
-            try:
-                sem = int(float(str(val).strip()))
-                if sem < 1 or sem > 12:
-                    errors.append(f"Row {idx + 2}: Semester '{val}' must be between 1 and 12")
-                    valid_mask[idx] = False
-                else:
-                    df.at[idx, "semester"] = sem
-            except (ValueError, TypeError):
-                if pd.notna(val) and str(val).strip():
-                    errors.append(f"Row {idx + 2}: Invalid semester value '{val}'")
-                    valid_mask[idx] = False
+    if not any(normalized_headers):
+        return [], ["The uploaded file must include a valid header row."]
 
-    # Validate marks
-    if "marks" in df.columns:
-        for idx, val in df["marks"].items():
-            if pd.notna(val) and str(val).strip():
-                try:
-                    marks = float(str(val).strip())
-                    if marks < 0:
-                        errors.append(f"Row {idx + 2}: Marks cannot be negative ({marks})")
-                        valid_mask[idx] = False
-                    else:
-                        df.at[idx, "marks"] = marks
-                except (ValueError, TypeError):
-                    errors.append(f"Row {idx + 2}: Invalid marks value '{val}'")
-                    valid_mask[idx] = False
+    for header in normalized_headers:
+        if not header:
+            errors.append("The uploaded file contains an empty column header.")
+            continue
 
-    # Validate max_marks
-    if "max_marks" in df.columns:
-        for idx, val in df["max_marks"].items():
-            if pd.notna(val) and str(val).strip():
-                try:
-                    max_m = float(str(val).strip())
-                    if max_m <= 0:
-                        errors.append(f"Row {idx + 2}: Max marks must be positive ({max_m})")
-                        valid_mask[idx] = False
-                    else:
-                        df.at[idx, "max_marks"] = max_m
-                except (ValueError, TypeError):
-                    errors.append(f"Row {idx + 2}: Invalid max_marks value '{val}'")
-                    valid_mask[idx] = False
+        standard_name = ALIAS_LOOKUP.get(header, header)
+        if standard_name in seen_headers:
+            errors.append(f"Duplicate column detected: '{standard_name}'.")
+            continue
 
-    # Strip string columns
-    str_cols = ["register_number", "student_name", "subject_code", "subject_name", "grade"]
-    for col in str_cols:
-        if col in df.columns:
-            df[col] = df[col].astype(str).str.strip()
+        resolved_headers.append(standard_name)
+        seen_headers.add(standard_name)
 
-    valid_df = df[valid_mask].reset_index(drop=True)
-    return valid_df, errors
+    missing_columns = [column for column in REQUIRED_COLUMNS if column not in seen_headers]
+    if missing_columns:
+        errors.append(
+            "Missing required columns: " + ", ".join(missing_columns) + "."
+        )
+
+    return resolved_headers, errors
+
+
+def _clean_text(value: Any) -> str:
+    if value is None:
+        return ""
+
+    text = str(value).replace("\xa0", " ").strip()
+    if text.lower() in {"", "nan", "none"}:
+        return ""
+    return re.sub(r"\s+", " ", text)
+
+
+def _read_csv_rows(content: bytes) -> Tuple[List[Dict[str, Any]], List[str]]:
+    try:
+        decoded_content = content.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        return [], [
+            "Unable to read the CSV file. Please save it as UTF-8 encoded CSV and try again."
+        ]
+
+    reader = csv.DictReader(io.StringIO(decoded_content))
+    if reader.fieldnames is None:
+        return [], ["The uploaded CSV file must include a header row."]
+
+    headers, header_errors = _resolve_headers(list(reader.fieldnames))
+    if header_errors:
+        return [], header_errors
+
+    reader.fieldnames = headers
+    rows: List[Dict[str, Any]] = []
+
+    for row_number, raw_row in enumerate(reader, start=2):
+        if None in raw_row and any(_clean_text(value) for value in raw_row.get(None, [])):
+            return [], [f"Row {row_number} has more values than the header row."]
+
+        rows.append(dict(raw_row))
+        if len(rows) > MAX_UPLOAD_ROWS:
+            return [], [
+                f"The uploaded file exceeds the {MAX_UPLOAD_ROWS} row limit. Please split it into smaller files."
+            ]
+
+    return rows, []
+
+
+def _read_xlsx_rows(content: bytes) -> Tuple[List[Dict[str, Any]], List[str]]:
+    workbook = None
+    try:
+        workbook = load_workbook(io.BytesIO(content), read_only=True, data_only=True)
+        sheet = workbook.active
+        row_iterator = sheet.iter_rows(values_only=True)
+        header_row = next(row_iterator, None)
+        if header_row is None:
+            return [], ["The uploaded file is empty."]
+
+        headers, header_errors = _resolve_headers(list(header_row))
+        if header_errors:
+            return [], header_errors
+
+        rows: List[Dict[str, Any]] = []
+        header_count = len(headers)
+
+        for row_number, values in enumerate(row_iterator, start=2):
+            values = tuple(values or ())
+            trailing_values = values[header_count:]
+            if any(_clean_text(value) for value in trailing_values):
+                return [], [f"Row {row_number} has more values than the header row."]
+
+            row: Dict[str, Any] = {}
+            for index, header in enumerate(headers):
+                row[header] = values[index] if index < len(values) else None
+
+            rows.append(row)
+            if len(rows) > MAX_UPLOAD_ROWS:
+                return [], [
+                    f"The uploaded file exceeds the {MAX_UPLOAD_ROWS} row limit. Please split it into smaller files."
+                ]
+
+        return rows, []
+    except Exception:
+        return [], ["Unable to read the Excel file. Please upload a valid .xlsx file."]
+    finally:
+        if workbook is not None:
+            workbook.close()
+
+
+def _parse_semester(value: Any, row_number: int) -> Tuple[int | None, str | None]:
+    text = _clean_text(value)
+    if not text:
+        return None, f"Row {row_number} is missing 'semester'."
+
+    try:
+        decimal_value = Decimal(text)
+    except InvalidOperation:
+        return None, f"Row {row_number} has an invalid semester value '{text}'."
+
+    if decimal_value != int(decimal_value):
+        return None, f"Row {row_number} has an invalid semester value '{text}'."
+
+    semester = int(decimal_value)
+    if semester < 1 or semester > 12:
+        return None, f"Row {row_number} must have a semester between 1 and 12."
+
+    return semester, None
+
+
+def _parse_number(
+    value: Any,
+    row_number: int,
+    field_name: str,
+    *,
+    allow_blank: bool = False,
+    minimum: float | None = None,
+) -> Tuple[float | None, str | None]:
+    text = _clean_text(value)
+    if not text:
+        if allow_blank:
+            return None, None
+        return None, f"Row {row_number} is missing '{field_name}'."
+
+    try:
+        number = float(Decimal(text))
+    except InvalidOperation:
+        return None, f"Row {row_number} has an invalid {field_name} value '{text}'."
+
+    if minimum is not None and number < minimum:
+        return None, f"Row {row_number} must have a {field_name} value of at least {minimum}."
+
+    return round(number, 2), None
+
+
+def _normalize_required_text(
+    value: Any,
+    row_number: int,
+    field_name: str,
+    *,
+    max_length: int,
+) -> Tuple[str | None, str | None]:
+    cleaned = _clean_text(value)
+    if not cleaned:
+        return None, f"Row {row_number} is missing '{field_name}'."
+
+    if len(cleaned) > max_length:
+        return None, f"Row {row_number} has a {field_name} value that is too long."
+
+    return cleaned, None
+
+
+def _normalize_optional_text(
+    value: Any,
+    row_number: int,
+    field_name: str,
+    *,
+    max_length: int,
+) -> Tuple[str | None, str | None]:
+    cleaned = _clean_text(value)
+    if not cleaned:
+        return None, None
+
+    if len(cleaned) > max_length:
+        return None, f"Row {row_number} has a {field_name} value that is too long."
+
+    return cleaned, None
+
+
+def _normalize_grade(value: Any, row_number: int) -> Tuple[str | None, str | None]:
+    cleaned = _clean_text(value)
+    if not cleaned:
+        return None, None
+
+    normalized = cleaned.upper().replace(" ", "")
+    if normalized == "NA":
+        normalized = "N/A"
+
+    if normalized not in VALID_GRADES:
+        return None, f"Row {row_number} has an invalid grade format."
+
+    if normalized == "P":
+        normalized = "PASS"
+
+    return normalized, None
 
 
 def calculate_grade(marks: float, max_marks: float) -> str:
-    """Calculate letter grade from marks."""
-    if max_marks == 0:
+    """Calculate a standard letter grade from marks."""
+    if max_marks <= 0:
         return "N/A"
-    pct = (marks / max_marks) * 100
-    if pct >= 90:
+
+    percentage = (marks / max_marks) * 100
+    if percentage >= 90:
         return "O"
-    elif pct >= 80:
+    if percentage >= 80:
         return "A+"
-    elif pct >= 70:
+    if percentage >= 70:
         return "A"
-    elif pct >= 60:
+    if percentage >= 60:
         return "B+"
-    elif pct >= 50:
+    if percentage >= 50:
         return "B"
-    elif pct >= 40:
+    if percentage >= 40:
         return "C"
-    else:
-        return "F"
+    return "F"
 
 
-async def parse_upload_file(file: UploadFile) -> Tuple[pd.DataFrame, List[str]]:
-    """
-    Parse an uploaded CSV or XLSX file into a validated DataFrame.
-    Returns (dataframe, errors).
-    """
-    content = await file.read()
-    filename = file.filename or "unknown"
+def _validate_rows(raw_rows: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[str]]:
+    cleaned_rows: List[Dict[str, Any]] = []
     errors: List[str] = []
+    seen_results: set[tuple[str, int, str]] = set()
 
-    try:
-        if filename.lower().endswith(".xlsx") or filename.lower().endswith(".xls"):
-            df = pd.read_excel(io.BytesIO(content), engine="openpyxl")
-        elif filename.lower().endswith(".csv"):
-            df = pd.read_csv(io.BytesIO(content))
-        else:
-            return pd.DataFrame(), [f"Unsupported file type: {filename}. Please upload .csv or .xlsx"]
-    except Exception as e:
-        return pd.DataFrame(), [f"Failed to read file '{filename}': {str(e)}"]
+    for row_number, raw_row in enumerate(raw_rows, start=2):
+        if not any(_clean_text(value) for value in raw_row.values()):
+            errors.append(f"Row {row_number} is empty.")
+            continue
 
-    if df.empty:
-        return pd.DataFrame(), ["The uploaded file is empty."]
+        register_number, register_error = _normalize_required_text(
+            raw_row.get("register_number"),
+            row_number,
+            "register_number",
+            max_length=TEXT_LIMITS["register_number"],
+        )
+        student_name, student_error = _normalize_required_text(
+            raw_row.get("student_name"),
+            row_number,
+            "student_name",
+            max_length=TEXT_LIMITS["student_name"],
+        )
+        subject_code, subject_code_error = _normalize_required_text(
+            raw_row.get("subject_code"),
+            row_number,
+            "subject_code",
+            max_length=TEXT_LIMITS["subject_code"],
+        )
+        semester, semester_error = _parse_semester(raw_row.get("semester"), row_number)
+        marks, marks_error = _parse_number(
+            raw_row.get("marks"),
+            row_number,
+            "marks",
+            minimum=0,
+        )
+        max_marks, max_marks_error = _parse_number(
+            raw_row.get("max_marks"),
+            row_number,
+            "max_marks",
+            allow_blank=True,
+            minimum=0.01,
+        )
+        subject_name, subject_name_error = _normalize_optional_text(
+            raw_row.get("subject_name"),
+            row_number,
+            "subject_name",
+            max_length=TEXT_LIMITS["subject_name"],
+        )
+        grade, grade_error = _normalize_grade(raw_row.get("grade"), row_number)
 
-    # Map columns
-    df, col_warnings = _map_columns(df)
-    errors.extend(col_warnings)
+        row_errors = [
+            error
+            for error in [
+                register_error,
+                student_error,
+                subject_code_error,
+                semester_error,
+                marks_error,
+                max_marks_error,
+                subject_name_error,
+                grade_error,
+            ]
+            if error
+        ]
 
-    if col_warnings:
-        return pd.DataFrame(), errors
+        if row_errors:
+            errors.extend(row_errors)
+            continue
 
-    # Validate rows
-    df, row_errors = _validate_rows(df)
-    errors.extend(row_errors)
+        register_number = register_number.upper()
+        subject_code = subject_code.upper()
+        subject_name = subject_name or subject_code
+        max_marks = max_marks if max_marks is not None else DEFAULT_MAX_MARKS
 
-    # Fill defaults
-    if "max_marks" not in df.columns:
-        df["max_marks"] = 100.0
-    else:
-        df["max_marks"] = df["max_marks"].fillna(100.0)
+        if marks is None or semester is None:
+            errors.append(f"Row {row_number} contains incomplete marks data.")
+            continue
 
-    if "subject_name" not in df.columns:
-        df["subject_name"] = df["subject_code"]
-
-    # Calculate grades if not provided
-    if "grade" not in df.columns or df["grade"].isna().all():
-        if "marks" in df.columns:
-            df["grade"] = df.apply(
-                lambda row: calculate_grade(
-                    float(row["marks"]) if pd.notna(row["marks"]) else 0,
-                    float(row["max_marks"]) if pd.notna(row["max_marks"]) else 100
-                ),
-                axis=1
+        if marks > max_marks:
+            errors.append(
+                f"Row {row_number} has marks greater than max_marks ({marks} > {max_marks})."
             )
+            continue
 
-    # Calculate pass_status
-    if "marks" in df.columns:
-        df["pass_status"] = df.apply(
-            lambda row: (float(row["marks"]) / float(row["max_marks"])) * 100 >= 40
-            if pd.notna(row["marks"]) and float(row["max_marks"]) > 0
-            else False,
-            axis=1
+        result_key = (register_number, semester, subject_code)
+        if result_key in seen_results:
+            errors.append(
+                f"Row {row_number} is a duplicate result entry for register number {register_number}, semester {semester}, subject {subject_code}."
+            )
+            continue
+        seen_results.add(result_key)
+
+        pass_status = ((marks / max_marks) * 100) >= PASS_PERCENTAGE if max_marks else False
+        cleaned_rows.append(
+            {
+                "register_number": register_number,
+                "student_name": student_name,
+                "semester": semester,
+                "subject_code": subject_code,
+                "subject_name": subject_name,
+                "marks": marks,
+                "max_marks": max_marks,
+                "grade": grade or calculate_grade(marks, max_marks),
+                "pass_status": pass_status,
+            }
         )
 
-    return df, errors
+    return cleaned_rows, errors
+
+
+async def parse_upload_file(file: UploadFile) -> Tuple[List[Dict[str, Any]], List[str]]:
+    """Parse and validate an uploaded CSV or XLSX file."""
+    filename = (file.filename or "upload").strip()
+    lower_filename = filename.lower()
+
+    if not lower_filename.endswith((".csv", ".xlsx")):
+        return [], ["Unsupported file type. Please upload a .csv or .xlsx file."]
+
+    content = await file.read(MAX_UPLOAD_BYTES + 1)
+    if len(content) > MAX_UPLOAD_BYTES:
+        return [], [
+            f"The uploaded file is too large. The maximum allowed size is {MAX_UPLOAD_BYTES // (1024 * 1024)} MB."
+        ]
+
+    if not content:
+        return [], ["The uploaded file is empty."]
+
+    if lower_filename.endswith(".csv"):
+        raw_rows, errors = _read_csv_rows(content)
+    else:
+        raw_rows, errors = _read_xlsx_rows(content)
+
+    if errors:
+        return [], errors
+
+    if not raw_rows:
+        return [], ["The uploaded file does not contain any data rows."]
+
+    cleaned_rows, row_errors = _validate_rows(raw_rows)
+    if row_errors:
+        return [], row_errors
+
+    return cleaned_rows, []

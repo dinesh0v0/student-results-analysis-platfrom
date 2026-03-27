@@ -39,6 +39,14 @@ class AuthResponse(BaseModel):
     student_id: Optional[str] = None
 
 
+class SessionResponse(BaseModel):
+    user_id: str
+    email: str
+    role: str
+    institution_id: Optional[str] = None
+    student_id: Optional[str] = None
+
+
 # ---- Institution ----
 class InstitutionResponse(BaseModel):
     id: str
@@ -61,7 +69,7 @@ class SubjectResponse(BaseModel):
     subject_code: str
     subject_name: str
     semester: int
-    max_marks: int
+    max_marks: float
 
 
 # ---- Result ----
