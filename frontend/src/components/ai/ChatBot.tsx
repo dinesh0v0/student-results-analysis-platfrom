@@ -80,7 +80,14 @@ export function ChatBot() {
       const { data } = await api.post(
         endpoint,
         { message: normalizedInput },
-        { signal: controller.signal, timeout: 30000 }
+        {
+          signal: controller.signal,
+          timeout: 30000,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        }
       );
 
       setMessages((previous) => [

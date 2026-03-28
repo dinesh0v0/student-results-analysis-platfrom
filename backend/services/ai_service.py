@@ -1,12 +1,13 @@
 import asyncio
+import logging
+import os
 import re
 from typing import Any, Dict, List, Tuple
 
 import google.generativeai as genai
 
-from config import get_settings
 
-settings = get_settings()
+logger = logging.getLogger(__name__)
 
 MODEL_NAME = "gemini-2.0-flash"
 MODEL_TIMEOUT_SECONDS = 25
@@ -17,11 +18,27 @@ AI_REJECTION_MESSAGE = (
     "Please rephrase your request."
 )
 
-if settings.GEMINI_API_KEY:
-    genai.configure(api_key=settings.GEMINI_API_KEY)
-    model = genai.GenerativeModel(MODEL_NAME)
-else:
-    model = None
+
+def _get_gemini_api_key() -> str:
+    return (os.getenv("GEMINI_API_KEY") or "").strip()
+
+
+def _build_model() -> Any:
+    api_key = _get_gemini_api_key()
+    if not api_key:
+        logger.error("Gemini API key is missing. Set GEMINI_API_KEY in the backend environment.")
+        return None
+
+    try:
+        genai.configure(api_key=api_key)
+        logger.info("Gemini model initialized: %s", MODEL_NAME)
+        return genai.GenerativeModel(MODEL_NAME)
+    except Exception as exc:
+        logger.exception("Failed to initialize Gemini model: %s", exc)
+        return None
+
+
+model = _build_model()
 
 
 DANGEROUS_PATTERNS = [
@@ -38,10 +55,8 @@ DANGEROUS_PATTERNS = [
 
 
 def sanitize_input(message: str) -> Tuple[str, bool]:
-    """Normalize user input and reject obvious prompt-injection attempts."""
     normalized = re.sub(r"[\x00-\x1f\x7f]", " ", message or "")
     normalized = re.sub(r"\s+", " ", normalized).strip()
-
     if not normalized:
         return "", False
 
@@ -81,7 +96,30 @@ Student data:
 """
 
 
+def _extract_response_text(response: Any) -> str:
+    text = getattr(response, "text", "") or ""
+    if text.strip():
+        return text.strip()
+
+    candidates = getattr(response, "candidates", None) or []
+    extracted_parts: List[str] = []
+    for candidate in candidates:
+        content = getattr(candidate, "content", None)
+        parts = getattr(content, "parts", None) or []
+        for part in parts:
+            part_text = getattr(part, "text", "") or ""
+            if part_text.strip():
+                extracted_parts.append(part_text.strip())
+    return "\n".join(extracted_parts).strip()
+
+
 async def _generate_response(system_prompt: str, user_message: str) -> str:
+    global model
+
+    if model is None:
+        logger.error("Gemini model is unavailable before request execution.")
+        model = _build_model()
+
     if model is None:
         return AI_OVERLOADED_MESSAGE
 
@@ -89,29 +127,25 @@ async def _generate_response(system_prompt: str, user_message: str) -> str:
         response = await asyncio.wait_for(
             asyncio.to_thread(
                 model.generate_content,
-                [system_prompt, f"User question: {user_message}"],
+                [
+                    {"role": "user", "parts": [system_prompt]},
+                    {"role": "user", "parts": [f"User question: {user_message}"]},
+                ],
             ),
             timeout=MODEL_TIMEOUT_SECONDS,
         )
-    except asyncio.TimeoutError:
+    except asyncio.TimeoutError as exc:
+        logger.error("Gemini request timed out after %s seconds: %s", MODEL_TIMEOUT_SECONDS, exc)
         return AI_OVERLOADED_MESSAGE
-    except Exception:
+    except Exception as exc:
+        logger.exception("Gemini request failed: %s", exc)
         return AI_OVERLOADED_MESSAGE
 
-    text = getattr(response, "text", "") or ""
+    text = _extract_response_text(response)
     if not text:
-        candidates = getattr(response, "candidates", None) or []
-        extracted_parts: List[str] = []
-        for candidate in candidates:
-            content = getattr(candidate, "content", None)
-            parts = getattr(content, "parts", None) or []
-            for part in parts:
-                part_text = getattr(part, "text", "") or ""
-                if part_text.strip():
-                    extracted_parts.append(part_text.strip())
-        text = "\n".join(extracted_parts)
-    text = text.strip()
-    return text or AI_OVERLOADED_MESSAGE
+        logger.error("Gemini returned an empty response payload: %s", response)
+        return AI_OVERLOADED_MESSAGE
+    return text
 
 
 async def admin_chat(message: str, institution_id: str, client: Any) -> Dict[str, Any]:
@@ -120,6 +154,9 @@ async def admin_chat(message: str, institution_id: str, client: Any) -> Dict[str
         return {"response": AI_REJECTION_MESSAGE, "query_used": None}
 
     context = _build_admin_context(client, institution_id)
+    if not isinstance(context, str):
+        context = str(context)
+
     response_text = await _generate_response(
         ADMIN_SYSTEM_PROMPT.format(data_context=context),
         sanitized_message,
@@ -133,6 +170,9 @@ async def student_chat(message: str, student_id: str, client: Any) -> Dict[str, 
         return {"response": AI_REJECTION_MESSAGE, "query_used": None}
 
     context = _build_student_context(client, student_id)
+    if not isinstance(context, str):
+        context = str(context)
+
     response_text = await _generate_response(
         STUDENT_SYSTEM_PROMPT.format(data_context=context),
         sanitized_message,
@@ -144,7 +184,7 @@ def _build_admin_context(client: Any, institution_id: str) -> str:
     try:
         students_resp = (
             client.table("students")
-            .select("id, register_number, student_name")
+            .select("id, register_number, student_name, campus, faculty, department, branch, section")
             .eq("institution_id", institution_id)
             .execute()
         )
@@ -218,20 +258,23 @@ def _build_admin_context(client: Any, institution_id: str) -> str:
         for subject_key, stats in subject_stats.items():
             average_marks = round((stats["marks"] / stats["total"]), 1) if stats["total"] else 0.0
             subject_pass_percentage = round((stats["passed"] / stats["total"]) * 100, 1) if stats["total"] else 0.0
-            lines.append(
-                f"- {subject_key}: pass rate {subject_pass_percentage}%, average marks {average_marks}"
-            )
+            lines.append(f"- {subject_key}: pass rate {subject_pass_percentage}%, average marks {average_marks}")
 
         lines.append("Top performers:")
         for student_id, scores in top_students:
             percentage = round((scores["marks"] / scores["max"]) * 100, 1) if scores["max"] else 0.0
             student = student_lookup.get(student_id, {})
             lines.append(
-                f"- {student.get('student_name', 'Unknown')} ({student.get('register_number', 'N/A')}): {percentage}%"
+                "- "
+                f"{student.get('student_name', 'Unknown')} ({student.get('register_number', 'N/A')}) | "
+                f"{student.get('campus', 'N/A')} / {student.get('faculty', 'N/A')} / "
+                f"{student.get('department', 'N/A')} / {student.get('branch', 'N/A')} / {student.get('section', 'N/A')} | "
+                f"{percentage}%"
             )
 
         return "\n".join(lines)
-    except Exception:
+    except Exception as exc:
+        logger.exception("Failed to build admin AI context for institution %s: %s", institution_id, exc)
         return "Institution analytics data is temporarily unavailable."
 
 
@@ -263,6 +306,11 @@ def _build_student_context(client: Any, student_id: str) -> str:
         lines = [
             f"Student name: {student.get('student_name', 'N/A')}",
             f"Register number: {student.get('register_number', 'N/A')}",
+            f"Campus: {student.get('campus', 'N/A')}",
+            f"Faculty: {student.get('faculty', 'N/A')}",
+            f"Department: {student.get('department', 'N/A')}",
+            f"Branch: {student.get('branch', 'N/A')}",
+            f"Section: {student.get('section', 'N/A')}",
             f"Total subjects: {len(results)}",
             "Results by semester:",
         ]
@@ -296,12 +344,11 @@ def _build_student_context(client: Any, student_id: str) -> str:
                 )
 
             semester_percentage = round((semester_marks / semester_max) * 100, 1) if semester_max else 0.0
-            lines.append(
-                f"  Semester summary: {semester_percentage}% with {passed}/{len(semester_rows)} subjects passed"
-            )
+            lines.append(f"  Semester summary: {semester_percentage}% with {passed}/{len(semester_rows)} subjects passed")
 
         overall_percentage = round((overall_marks / overall_max) * 100, 1) if overall_max else 0.0
         lines.append(f"Overall percentage: {overall_percentage}%")
         return "\n".join(lines)
-    except Exception:
+    except Exception as exc:
+        logger.exception("Failed to build student AI context for student %s: %s", student_id, exc)
         return "Student academic data is temporarily unavailable."

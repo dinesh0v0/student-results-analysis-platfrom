@@ -1,4 +1,5 @@
 from collections import defaultdict, deque
+import logging
 import time
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -13,6 +14,7 @@ from services.ai_service import (
 from services.supabase_client import get_authenticated_client
 
 router = APIRouter(prefix="/api/ai", tags=["AI Assistant"])
+logger = logging.getLogger(__name__)
 
 RATE_LIMIT_WINDOW_SECONDS = 60
 RATE_LIMIT_REQUESTS = 8
@@ -49,7 +51,8 @@ def _store_chat_history(client, user_id: str, institution_id: str, role: str, me
             )
             .execute()
         )
-    except Exception:
+    except Exception as exc:
+        logger.exception("Failed to store %s chat history for user %s: %s", role, user_id, exc)
         return
 
 
@@ -71,7 +74,8 @@ async def admin_ai_chat(
             .limit(1)
             .execute()
         )
-    except Exception:
+    except Exception as exc:
+        logger.exception("Unable to load admin AI context for user %s: %s", user.user_id, exc)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Unable to load institution context for the AI assistant.",
@@ -85,6 +89,7 @@ async def admin_ai_chat(
 
     institution_id = institution_resp.data[0]["id"]
     result = await admin_chat(request.message, institution_id, client)
+    logger.info("Admin AI response generated for user %s in institution %s", user.user_id, institution_id)
     _store_chat_history(client, user.user_id, institution_id, "admin", request.message, result["response"])
     return ChatResponse(**result)
 
@@ -107,7 +112,8 @@ async def student_ai_chat(
             .limit(1)
             .execute()
         )
-    except Exception:
+    except Exception as exc:
+        logger.exception("Unable to load student AI context for user %s: %s", user.user_id, exc)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Unable to load student context for the AI assistant.",
@@ -121,6 +127,7 @@ async def student_ai_chat(
 
     student = student_resp.data[0]
     result = await student_chat(request.message, student["id"], client)
+    logger.info("Student AI response generated for user %s and student %s", user.user_id, student["id"])
     _store_chat_history(
         client,
         user.user_id,
