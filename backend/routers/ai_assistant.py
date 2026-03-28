@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 from auth import AuthenticatedUser, get_current_user, require_role
 from models.schemas import ChatRequest, ChatResponse
-from services.ai_service import (
+from services.local_bot_service import (
     AI_OVERLOADED_MESSAGE,
     admin_chat,
     student_chat,

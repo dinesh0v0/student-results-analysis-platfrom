@@ -73,7 +73,7 @@ export default function Landing() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">AI Assistant</h3>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Ask natural language questions about your data. The integrated Gemini AI finds the answers instantly.
+              Ask natural language questions about your data. The integrated institutional assistant finds the answers instantly.
             </p>
           </div>
         </div>

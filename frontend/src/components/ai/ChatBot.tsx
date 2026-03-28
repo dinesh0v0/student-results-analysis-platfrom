@@ -241,7 +241,7 @@ export function ChatBot() {
             </button>
           </form>
           <div className="mt-2 text-center">
-            <span className="text-[10px] text-slate-400">Powered by Google Gemini</span>
+            <span className="text-[10px] text-slate-400">Powered by the local academic assistant</span>
           </div>
         </div>
       </div>

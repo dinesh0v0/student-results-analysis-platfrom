@@ -9,6 +9,5 @@ openpyxl
 supabase
 python-jose[cryptography]
 httpx<0.28
-google-generativeai
 reportlab
 python-dotenv
