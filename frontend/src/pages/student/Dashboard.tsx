@@ -148,7 +148,7 @@ export default function StudentDashboard() {
         </Card>
       ) : (
         <>
-          <div className="grid grid-cols-1 gap-4 animate-slide-up sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 animate-slide-up md:grid-cols-2 lg:grid-cols-4">
             <Card className="flex items-center gap-4 border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-5 dark:border-indigo-800 dark:from-indigo-900/20 dark:to-slate-900">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400">
                 <Target className="h-6 w-6" />
@@ -207,7 +207,7 @@ export default function StudentDashboard() {
                       <span>Subject</span>
                       <div className="relative">
                         <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                        <input className="input-field w-full py-2 pl-9 text-sm normal-case" value={subjectSearch} onChange={(event) => setSubjectSearch(event.target.value)} placeholder="Code or name" />
+                      <input className="input-field w-full py-3 pl-9 text-sm normal-case" value={subjectSearch} onChange={(event) => setSubjectSearch(event.target.value)} placeholder="Code or name" />
                       </div>
                     </label>
 
