@@ -60,6 +60,16 @@ export default function AdminUpload() {
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  // Simple retry mechanism for availability issues
+  const MAX_HISTORY_RETRIES = 5;
+  const MAX_RESULTS_RETRIES = 5;
+  const MAX_UPLOAD_RETRIES = 3;
+  const historyRetryRef = React.useRef(0);
+  const resultsRetryRef = React.useRef(0);
+  const uploadRetryRef = React.useRef(0);
+  const historyTimerRef = React.useRef<number | null>(null);
+  const resultsTimerRef = React.useRef<number | null>(null);
+  const uploadTimerRef = React.useRef<number | null>(null);
 
   const semester = searchParams.get('semester') ?? 'all';
   const search = searchParams.get('search') ?? '';
@@ -134,7 +144,16 @@ export default function AdminUpload() {
       if (isRequestCanceled(error)) {
         return;
       }
-      setHistoryError(getApiErrorMessage(error, 'Unable to load upload history.'));
+      const msg = getApiErrorMessage(error, 'Unable to load upload history.');
+      setHistoryError(msg);
+      // Schedule retry with backoff
+      if (historyRetryRef.current < MAX_HISTORY_RETRIES) {
+        const delay = 1000 * Math.pow(2, historyRetryRef.current); // 1s,2s,4s,8s...
+        historyRetryRef.current += 1;
+        historyTimerRef.current = window.setTimeout(() => {
+          fetchHistory();
+        }, delay) as unknown as number;
+      }
     } finally {
       setIsHistoryLoading(false);
     }
@@ -156,7 +175,15 @@ export default function AdminUpload() {
       if (isRequestCanceled(error)) {
         return;
       }
-      setResultsError(getApiErrorMessage(error, 'Unable to load result management data.'));
+      const msg = getApiErrorMessage(error, 'Unable to load result management data.');
+      setResultsError(msg);
+      if (resultsRetryRef.current < MAX_RESULTS_RETRIES) {
+        const delay = 1000 * Math.pow(2, resultsRetryRef.current);
+        resultsRetryRef.current += 1;
+        resultsTimerRef.current = window.setTimeout(() => {
+          fetchResults();
+        }, delay) as unknown as number;
+      }
     } finally {
       setIsResultsLoading(false);
     }
@@ -242,6 +269,19 @@ export default function AdminUpload() {
       fetchResults();
     } catch (error) {
       const message = getApiErrorMessage(error, 'Upload failed due to a server error.');
+      // If service unavailable, schedule a retry of the upload (best-effort)
+      if (typeof error === 'object' && error !== null) {
+        const status = (error as any).response?.status || (error as any).status;
+        if (status === 503) {
+          if (uploadRetryRef.current < MAX_UPLOAD_RETRIES) {
+            const delay = 2000 * (uploadRetryRef.current + 1);
+            uploadRetryRef.current += 1;
+            uploadTimerRef.current = window.setTimeout(() => {
+              uploadFile();
+            }, delay) as unknown as number;
+          }
+        }
+      }
       setResult({
         batch_id: '',
         records_processed: 0,
