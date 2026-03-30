@@ -1,0 +1,1001 @@
+campus,faculty,department,branch,section,register_number,student_name,semester,subject_codes,subject_names,marks,max_marks,grades
+Main Campus,Engineering,CSE,CSE,A,CSE1000,Student 0001,1,MA101,Calculus,60,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1000,Student 0001,1,CS101,Intro to CS,67,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1000,Student 0001,1,CS102,Data Structures,74,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1000,Student 0001,1,PH101,Physics,81,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1000,Student 0001,1,CH101,Chemistry,88,100,A+
+North Campus,Science,ME,IT,B,IT1001,Student 0002,1,MA101,Calculus,71,100,A
+North Campus,Science,ME,IT,B,IT1001,Student 0002,1,CS101,Intro to CS,78,100,A
+North Campus,Science,ME,IT,B,IT1001,Student 0002,1,CS102,Data Structures,85,100,A+
+North Campus,Science,ME,IT,B,IT1001,Student 0002,1,PH101,Physics,92,100,O
+North Campus,Science,ME,IT,B,IT1001,Student 0002,1,CH101,Chemistry,99,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1002,Student 0003,1,MA101,Calculus,82,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1002,Student 0003,1,CS101,Intro to CS,89,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1002,Student 0003,1,CS102,Data Structures,96,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1002,Student 0003,1,PH101,Physics,62,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1002,Student 0003,1,CH101,Chemistry,69,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1003,Student 0004,1,MA101,Calculus,93,100,O
+Main Campus,Science,EEE,EEE,A,EEE1003,Student 0004,1,CS101,Intro to CS,100,100,O
+Main Campus,Science,EEE,EEE,A,EEE1003,Student 0004,1,CS102,Data Structures,66,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1003,Student 0004,1,PH101,Physics,73,100,A
+Main Campus,Science,EEE,EEE,A,EEE1003,Student 0004,1,CH101,Chemistry,80,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1004,Student 0005,1,MA101,Calculus,63,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1004,Student 0005,1,CS101,Intro to CS,70,100,A
+North Campus,Engineering,CE,MECH,B,MECH1004,Student 0005,1,CS102,Data Structures,77,100,A
+North Campus,Engineering,CE,MECH,B,MECH1004,Student 0005,1,PH101,Physics,84,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1004,Student 0005,1,CH101,Chemistry,91,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1005,Student 0006,1,MA101,Calculus,74,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1005,Student 0006,1,CS101,Intro to CS,81,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1005,Student 0006,1,CS102,Data Structures,88,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1005,Student 0006,1,PH101,Physics,95,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1005,Student 0006,1,CH101,Chemistry,61,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1006,Student 0007,1,MA101,Calculus,85,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1006,Student 0007,1,CS101,Intro to CS,92,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1006,Student 0007,1,CS102,Data Structures,99,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1006,Student 0007,1,PH101,Physics,65,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1006,Student 0007,1,CH101,Chemistry,72,100,A
+North Campus,Science,ME,IT,B,IT1007,Student 0008,1,MA101,Calculus,96,100,O
+North Campus,Science,ME,IT,B,IT1007,Student 0008,1,CS101,Intro to CS,62,100,B+
+North Campus,Science,ME,IT,B,IT1007,Student 0008,1,CS102,Data Structures,69,100,B+
+North Campus,Science,ME,IT,B,IT1007,Student 0008,1,PH101,Physics,76,100,A
+North Campus,Science,ME,IT,B,IT1007,Student 0008,1,CH101,Chemistry,83,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1008,Student 0009,1,MA101,Calculus,66,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1008,Student 0009,1,CS101,Intro to CS,73,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1008,Student 0009,1,CS102,Data Structures,80,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1008,Student 0009,1,PH101,Physics,87,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1008,Student 0009,1,CH101,Chemistry,94,100,O
+Main Campus,Science,EEE,EEE,A,EEE1009,Student 0010,1,MA101,Calculus,77,100,A
+Main Campus,Science,EEE,EEE,A,EEE1009,Student 0010,1,CS101,Intro to CS,84,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1009,Student 0010,1,CS102,Data Structures,91,100,O
+Main Campus,Science,EEE,EEE,A,EEE1009,Student 0010,1,PH101,Physics,98,100,O
+Main Campus,Science,EEE,EEE,A,EEE1009,Student 0010,1,CH101,Chemistry,64,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1010,Student 0011,1,MA101,Calculus,88,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1010,Student 0011,1,CS101,Intro to CS,95,100,O
+North Campus,Engineering,CE,MECH,B,MECH1010,Student 0011,1,CS102,Data Structures,61,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1010,Student 0011,1,PH101,Physics,68,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1010,Student 0011,1,CH101,Chemistry,75,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1011,Student 0012,1,MA101,Calculus,99,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1011,Student 0012,1,CS101,Intro to CS,65,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1011,Student 0012,1,CS102,Data Structures,72,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1011,Student 0012,1,PH101,Physics,79,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1011,Student 0012,1,CH101,Chemistry,86,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1012,Student 0013,1,MA101,Calculus,69,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1012,Student 0013,1,CS101,Intro to CS,76,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1012,Student 0013,1,CS102,Data Structures,83,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1012,Student 0013,1,PH101,Physics,90,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1012,Student 0013,1,CH101,Chemistry,97,100,O
+North Campus,Science,ME,IT,B,IT1013,Student 0014,1,MA101,Calculus,80,100,A+
+North Campus,Science,ME,IT,B,IT1013,Student 0014,1,CS101,Intro to CS,87,100,A+
+North Campus,Science,ME,IT,B,IT1013,Student 0014,1,CS102,Data Structures,94,100,O
+North Campus,Science,ME,IT,B,IT1013,Student 0014,1,PH101,Physics,60,100,B+
+North Campus,Science,ME,IT,B,IT1013,Student 0014,1,CH101,Chemistry,67,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1014,Student 0015,1,MA101,Calculus,91,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1014,Student 0015,1,CS101,Intro to CS,98,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1014,Student 0015,1,CS102,Data Structures,64,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1014,Student 0015,1,PH101,Physics,71,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1014,Student 0015,1,CH101,Chemistry,78,100,A
+Main Campus,Science,EEE,EEE,A,EEE1015,Student 0016,1,MA101,Calculus,61,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1015,Student 0016,1,CS101,Intro to CS,68,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1015,Student 0016,1,CS102,Data Structures,75,100,A
+Main Campus,Science,EEE,EEE,A,EEE1015,Student 0016,1,PH101,Physics,82,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1015,Student 0016,1,CH101,Chemistry,89,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1016,Student 0017,1,MA101,Calculus,72,100,A
+North Campus,Engineering,CE,MECH,B,MECH1016,Student 0017,1,CS101,Intro to CS,79,100,A
+North Campus,Engineering,CE,MECH,B,MECH1016,Student 0017,1,CS102,Data Structures,86,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1016,Student 0017,1,PH101,Physics,93,100,O
+North Campus,Engineering,CE,MECH,B,MECH1016,Student 0017,1,CH101,Chemistry,100,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1017,Student 0018,1,MA101,Calculus,83,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1017,Student 0018,1,CS101,Intro to CS,90,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1017,Student 0018,1,CS102,Data Structures,97,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1017,Student 0018,1,PH101,Physics,63,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1017,Student 0018,1,CH101,Chemistry,70,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1018,Student 0019,1,MA101,Calculus,94,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1018,Student 0019,1,CS101,Intro to CS,60,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1018,Student 0019,1,CS102,Data Structures,67,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1018,Student 0019,1,PH101,Physics,74,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1018,Student 0019,1,CH101,Chemistry,81,100,A+
+North Campus,Science,ME,IT,B,IT1019,Student 0020,1,MA101,Calculus,64,100,B+
+North Campus,Science,ME,IT,B,IT1019,Student 0020,1,CS101,Intro to CS,71,100,A
+North Campus,Science,ME,IT,B,IT1019,Student 0020,1,CS102,Data Structures,78,100,A
+North Campus,Science,ME,IT,B,IT1019,Student 0020,1,PH101,Physics,85,100,A+
+North Campus,Science,ME,IT,B,IT1019,Student 0020,1,CH101,Chemistry,92,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1020,Student 0021,1,MA101,Calculus,75,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1020,Student 0021,1,CS101,Intro to CS,82,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1020,Student 0021,1,CS102,Data Structures,89,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1020,Student 0021,1,PH101,Physics,96,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1020,Student 0021,1,CH101,Chemistry,62,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1021,Student 0022,1,MA101,Calculus,86,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1021,Student 0022,1,CS101,Intro to CS,93,100,O
+Main Campus,Science,EEE,EEE,A,EEE1021,Student 0022,1,CS102,Data Structures,100,100,O
+Main Campus,Science,EEE,EEE,A,EEE1021,Student 0022,1,PH101,Physics,66,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1021,Student 0022,1,CH101,Chemistry,73,100,A
+North Campus,Engineering,CE,MECH,B,MECH1022,Student 0023,1,MA101,Calculus,97,100,O
+North Campus,Engineering,CE,MECH,B,MECH1022,Student 0023,1,CS101,Intro to CS,63,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1022,Student 0023,1,CS102,Data Structures,70,100,A
+North Campus,Engineering,CE,MECH,B,MECH1022,Student 0023,1,PH101,Physics,77,100,A
+North Campus,Engineering,CE,MECH,B,MECH1022,Student 0023,1,CH101,Chemistry,84,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1023,Student 0024,1,MA101,Calculus,67,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1023,Student 0024,1,CS101,Intro to CS,74,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1023,Student 0024,1,CS102,Data Structures,81,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1023,Student 0024,1,PH101,Physics,88,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1023,Student 0024,1,CH101,Chemistry,95,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1024,Student 0025,1,MA101,Calculus,78,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1024,Student 0025,1,CS101,Intro to CS,85,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1024,Student 0025,1,CS102,Data Structures,92,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1024,Student 0025,1,PH101,Physics,99,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1024,Student 0025,1,CH101,Chemistry,65,100,B+
+North Campus,Science,ME,IT,B,IT1025,Student 0026,1,MA101,Calculus,89,100,A+
+North Campus,Science,ME,IT,B,IT1025,Student 0026,1,CS101,Intro to CS,96,100,O
+North Campus,Science,ME,IT,B,IT1025,Student 0026,1,CS102,Data Structures,62,100,B+
+North Campus,Science,ME,IT,B,IT1025,Student 0026,1,PH101,Physics,69,100,B+
+North Campus,Science,ME,IT,B,IT1025,Student 0026,1,CH101,Chemistry,76,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1026,Student 0027,1,MA101,Calculus,100,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1026,Student 0027,1,CS101,Intro to CS,66,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1026,Student 0027,1,CS102,Data Structures,73,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1026,Student 0027,1,PH101,Physics,80,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1026,Student 0027,1,CH101,Chemistry,87,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1027,Student 0028,1,MA101,Calculus,70,100,A
+Main Campus,Science,EEE,EEE,A,EEE1027,Student 0028,1,CS101,Intro to CS,77,100,A
+Main Campus,Science,EEE,EEE,A,EEE1027,Student 0028,1,CS102,Data Structures,84,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1027,Student 0028,1,PH101,Physics,91,100,O
+Main Campus,Science,EEE,EEE,A,EEE1027,Student 0028,1,CH101,Chemistry,98,100,O
+North Campus,Engineering,CE,MECH,B,MECH1028,Student 0029,1,MA101,Calculus,81,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1028,Student 0029,1,CS101,Intro to CS,88,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1028,Student 0029,1,CS102,Data Structures,95,100,O
+North Campus,Engineering,CE,MECH,B,MECH1028,Student 0029,1,PH101,Physics,61,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1028,Student 0029,1,CH101,Chemistry,68,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1029,Student 0030,1,MA101,Calculus,92,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1029,Student 0030,1,CS101,Intro to CS,99,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1029,Student 0030,1,CS102,Data Structures,65,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1029,Student 0030,1,PH101,Physics,72,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1029,Student 0030,1,CH101,Chemistry,79,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1030,Student 0031,1,MA101,Calculus,62,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1030,Student 0031,1,CS101,Intro to CS,69,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1030,Student 0031,1,CS102,Data Structures,76,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1030,Student 0031,1,PH101,Physics,83,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1030,Student 0031,1,CH101,Chemistry,90,100,O
+North Campus,Science,ME,IT,B,IT1031,Student 0032,1,MA101,Calculus,73,100,A
+North Campus,Science,ME,IT,B,IT1031,Student 0032,1,CS101,Intro to CS,80,100,A+
+North Campus,Science,ME,IT,B,IT1031,Student 0032,1,CS102,Data Structures,87,100,A+
+North Campus,Science,ME,IT,B,IT1031,Student 0032,1,PH101,Physics,94,100,O
+North Campus,Science,ME,IT,B,IT1031,Student 0032,1,CH101,Chemistry,60,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1032,Student 0033,1,MA101,Calculus,84,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1032,Student 0033,1,CS101,Intro to CS,91,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1032,Student 0033,1,CS102,Data Structures,98,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1032,Student 0033,1,PH101,Physics,64,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1032,Student 0033,1,CH101,Chemistry,71,100,A
+Main Campus,Science,EEE,EEE,A,EEE1033,Student 0034,1,MA101,Calculus,95,100,O
+Main Campus,Science,EEE,EEE,A,EEE1033,Student 0034,1,CS101,Intro to CS,61,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1033,Student 0034,1,CS102,Data Structures,68,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1033,Student 0034,1,PH101,Physics,75,100,A
+Main Campus,Science,EEE,EEE,A,EEE1033,Student 0034,1,CH101,Chemistry,82,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1034,Student 0035,1,MA101,Calculus,65,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1034,Student 0035,1,CS101,Intro to CS,72,100,A
+North Campus,Engineering,CE,MECH,B,MECH1034,Student 0035,1,CS102,Data Structures,79,100,A
+North Campus,Engineering,CE,MECH,B,MECH1034,Student 0035,1,PH101,Physics,86,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1034,Student 0035,1,CH101,Chemistry,93,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1035,Student 0036,1,MA101,Calculus,76,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1035,Student 0036,1,CS101,Intro to CS,83,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1035,Student 0036,1,CS102,Data Structures,90,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1035,Student 0036,1,PH101,Physics,97,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1035,Student 0036,1,CH101,Chemistry,63,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1036,Student 0037,1,MA101,Calculus,87,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1036,Student 0037,1,CS101,Intro to CS,94,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1036,Student 0037,1,CS102,Data Structures,60,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1036,Student 0037,1,PH101,Physics,67,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1036,Student 0037,1,CH101,Chemistry,74,100,A
+North Campus,Science,ME,IT,B,IT1037,Student 0038,1,MA101,Calculus,98,100,O
+North Campus,Science,ME,IT,B,IT1037,Student 0038,1,CS101,Intro to CS,64,100,B+
+North Campus,Science,ME,IT,B,IT1037,Student 0038,1,CS102,Data Structures,71,100,A
+North Campus,Science,ME,IT,B,IT1037,Student 0038,1,PH101,Physics,78,100,A
+North Campus,Science,ME,IT,B,IT1037,Student 0038,1,CH101,Chemistry,85,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1038,Student 0039,1,MA101,Calculus,68,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1038,Student 0039,1,CS101,Intro to CS,75,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1038,Student 0039,1,CS102,Data Structures,82,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1038,Student 0039,1,PH101,Physics,89,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1038,Student 0039,1,CH101,Chemistry,96,100,O
+Main Campus,Science,EEE,EEE,A,EEE1039,Student 0040,1,MA101,Calculus,79,100,A
+Main Campus,Science,EEE,EEE,A,EEE1039,Student 0040,1,CS101,Intro to CS,86,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1039,Student 0040,1,CS102,Data Structures,93,100,O
+Main Campus,Science,EEE,EEE,A,EEE1039,Student 0040,1,PH101,Physics,100,100,O
+Main Campus,Science,EEE,EEE,A,EEE1039,Student 0040,1,CH101,Chemistry,66,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1040,Student 0041,1,MA101,Calculus,90,100,O
+North Campus,Engineering,CE,MECH,B,MECH1040,Student 0041,1,CS101,Intro to CS,97,100,O
+North Campus,Engineering,CE,MECH,B,MECH1040,Student 0041,1,CS102,Data Structures,63,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1040,Student 0041,1,PH101,Physics,70,100,A
+North Campus,Engineering,CE,MECH,B,MECH1040,Student 0041,1,CH101,Chemistry,77,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1041,Student 0042,1,MA101,Calculus,60,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1041,Student 0042,1,CS101,Intro to CS,67,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1041,Student 0042,1,CS102,Data Structures,74,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1041,Student 0042,1,PH101,Physics,81,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1041,Student 0042,1,CH101,Chemistry,88,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1042,Student 0043,1,MA101,Calculus,71,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1042,Student 0043,1,CS101,Intro to CS,78,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1042,Student 0043,1,CS102,Data Structures,85,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1042,Student 0043,1,PH101,Physics,92,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1042,Student 0043,1,CH101,Chemistry,99,100,O
+North Campus,Science,ME,IT,B,IT1043,Student 0044,1,MA101,Calculus,82,100,A+
+North Campus,Science,ME,IT,B,IT1043,Student 0044,1,CS101,Intro to CS,89,100,A+
+North Campus,Science,ME,IT,B,IT1043,Student 0044,1,CS102,Data Structures,96,100,O
+North Campus,Science,ME,IT,B,IT1043,Student 0044,1,PH101,Physics,62,100,B+
+North Campus,Science,ME,IT,B,IT1043,Student 0044,1,CH101,Chemistry,69,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1044,Student 0045,1,MA101,Calculus,93,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1044,Student 0045,1,CS101,Intro to CS,100,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1044,Student 0045,1,CS102,Data Structures,66,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1044,Student 0045,1,PH101,Physics,73,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1044,Student 0045,1,CH101,Chemistry,80,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1045,Student 0046,1,MA101,Calculus,63,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1045,Student 0046,1,CS101,Intro to CS,70,100,A
+Main Campus,Science,EEE,EEE,A,EEE1045,Student 0046,1,CS102,Data Structures,77,100,A
+Main Campus,Science,EEE,EEE,A,EEE1045,Student 0046,1,PH101,Physics,84,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1045,Student 0046,1,CH101,Chemistry,91,100,O
+North Campus,Engineering,CE,MECH,B,MECH1046,Student 0047,1,MA101,Calculus,74,100,A
+North Campus,Engineering,CE,MECH,B,MECH1046,Student 0047,1,CS101,Intro to CS,81,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1046,Student 0047,1,CS102,Data Structures,88,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1046,Student 0047,1,PH101,Physics,95,100,O
+North Campus,Engineering,CE,MECH,B,MECH1046,Student 0047,1,CH101,Chemistry,61,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1047,Student 0048,1,MA101,Calculus,85,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1047,Student 0048,1,CS101,Intro to CS,92,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1047,Student 0048,1,CS102,Data Structures,99,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1047,Student 0048,1,PH101,Physics,65,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1047,Student 0048,1,CH101,Chemistry,72,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1048,Student 0049,1,MA101,Calculus,96,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1048,Student 0049,1,CS101,Intro to CS,62,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1048,Student 0049,1,CS102,Data Structures,69,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1048,Student 0049,1,PH101,Physics,76,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1048,Student 0049,1,CH101,Chemistry,83,100,A+
+North Campus,Science,ME,IT,B,IT1049,Student 0050,1,MA101,Calculus,66,100,B+
+North Campus,Science,ME,IT,B,IT1049,Student 0050,1,CS101,Intro to CS,73,100,A
+North Campus,Science,ME,IT,B,IT1049,Student 0050,1,CS102,Data Structures,80,100,A+
+North Campus,Science,ME,IT,B,IT1049,Student 0050,1,PH101,Physics,87,100,A+
+North Campus,Science,ME,IT,B,IT1049,Student 0050,1,CH101,Chemistry,94,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1050,Student 0051,1,MA101,Calculus,77,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1050,Student 0051,1,CS101,Intro to CS,84,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1050,Student 0051,1,CS102,Data Structures,91,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1050,Student 0051,1,PH101,Physics,98,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1050,Student 0051,1,CH101,Chemistry,64,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1051,Student 0052,1,MA101,Calculus,88,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1051,Student 0052,1,CS101,Intro to CS,95,100,O
+Main Campus,Science,EEE,EEE,A,EEE1051,Student 0052,1,CS102,Data Structures,61,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1051,Student 0052,1,PH101,Physics,68,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1051,Student 0052,1,CH101,Chemistry,75,100,A
+North Campus,Engineering,CE,MECH,B,MECH1052,Student 0053,1,MA101,Calculus,99,100,O
+North Campus,Engineering,CE,MECH,B,MECH1052,Student 0053,1,CS101,Intro to CS,65,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1052,Student 0053,1,CS102,Data Structures,72,100,A
+North Campus,Engineering,CE,MECH,B,MECH1052,Student 0053,1,PH101,Physics,79,100,A
+North Campus,Engineering,CE,MECH,B,MECH1052,Student 0053,1,CH101,Chemistry,86,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1053,Student 0054,1,MA101,Calculus,69,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1053,Student 0054,1,CS101,Intro to CS,76,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1053,Student 0054,1,CS102,Data Structures,83,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1053,Student 0054,1,PH101,Physics,90,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1053,Student 0054,1,CH101,Chemistry,97,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1054,Student 0055,1,MA101,Calculus,80,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1054,Student 0055,1,CS101,Intro to CS,87,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1054,Student 0055,1,CS102,Data Structures,94,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1054,Student 0055,1,PH101,Physics,60,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1054,Student 0055,1,CH101,Chemistry,67,100,B+
+North Campus,Science,ME,IT,B,IT1055,Student 0056,1,MA101,Calculus,91,100,O
+North Campus,Science,ME,IT,B,IT1055,Student 0056,1,CS101,Intro to CS,98,100,O
+North Campus,Science,ME,IT,B,IT1055,Student 0056,1,CS102,Data Structures,64,100,B+
+North Campus,Science,ME,IT,B,IT1055,Student 0056,1,PH101,Physics,71,100,A
+North Campus,Science,ME,IT,B,IT1055,Student 0056,1,CH101,Chemistry,78,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1056,Student 0057,1,MA101,Calculus,61,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1056,Student 0057,1,CS101,Intro to CS,68,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1056,Student 0057,1,CS102,Data Structures,75,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1056,Student 0057,1,PH101,Physics,82,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1056,Student 0057,1,CH101,Chemistry,89,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1057,Student 0058,1,MA101,Calculus,72,100,A
+Main Campus,Science,EEE,EEE,A,EEE1057,Student 0058,1,CS101,Intro to CS,79,100,A
+Main Campus,Science,EEE,EEE,A,EEE1057,Student 0058,1,CS102,Data Structures,86,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1057,Student 0058,1,PH101,Physics,93,100,O
+Main Campus,Science,EEE,EEE,A,EEE1057,Student 0058,1,CH101,Chemistry,100,100,O
+North Campus,Engineering,CE,MECH,B,MECH1058,Student 0059,1,MA101,Calculus,83,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1058,Student 0059,1,CS101,Intro to CS,90,100,O
+North Campus,Engineering,CE,MECH,B,MECH1058,Student 0059,1,CS102,Data Structures,97,100,O
+North Campus,Engineering,CE,MECH,B,MECH1058,Student 0059,1,PH101,Physics,63,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1058,Student 0059,1,CH101,Chemistry,70,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1059,Student 0060,1,MA101,Calculus,94,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1059,Student 0060,1,CS101,Intro to CS,60,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1059,Student 0060,1,CS102,Data Structures,67,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1059,Student 0060,1,PH101,Physics,74,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1059,Student 0060,1,CH101,Chemistry,81,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1060,Student 0061,1,MA101,Calculus,64,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1060,Student 0061,1,CS101,Intro to CS,71,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1060,Student 0061,1,CS102,Data Structures,78,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1060,Student 0061,1,PH101,Physics,85,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1060,Student 0061,1,CH101,Chemistry,92,100,O
+North Campus,Science,ME,IT,B,IT1061,Student 0062,1,MA101,Calculus,75,100,A
+North Campus,Science,ME,IT,B,IT1061,Student 0062,1,CS101,Intro to CS,82,100,A+
+North Campus,Science,ME,IT,B,IT1061,Student 0062,1,CS102,Data Structures,89,100,A+
+North Campus,Science,ME,IT,B,IT1061,Student 0062,1,PH101,Physics,96,100,O
+North Campus,Science,ME,IT,B,IT1061,Student 0062,1,CH101,Chemistry,62,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1062,Student 0063,1,MA101,Calculus,86,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1062,Student 0063,1,CS101,Intro to CS,93,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1062,Student 0063,1,CS102,Data Structures,100,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1062,Student 0063,1,PH101,Physics,66,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1062,Student 0063,1,CH101,Chemistry,73,100,A
+Main Campus,Science,EEE,EEE,A,EEE1063,Student 0064,1,MA101,Calculus,97,100,O
+Main Campus,Science,EEE,EEE,A,EEE1063,Student 0064,1,CS101,Intro to CS,63,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1063,Student 0064,1,CS102,Data Structures,70,100,A
+Main Campus,Science,EEE,EEE,A,EEE1063,Student 0064,1,PH101,Physics,77,100,A
+Main Campus,Science,EEE,EEE,A,EEE1063,Student 0064,1,CH101,Chemistry,84,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1064,Student 0065,1,MA101,Calculus,67,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1064,Student 0065,1,CS101,Intro to CS,74,100,A
+North Campus,Engineering,CE,MECH,B,MECH1064,Student 0065,1,CS102,Data Structures,81,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1064,Student 0065,1,PH101,Physics,88,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1064,Student 0065,1,CH101,Chemistry,95,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1065,Student 0066,1,MA101,Calculus,78,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1065,Student 0066,1,CS101,Intro to CS,85,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1065,Student 0066,1,CS102,Data Structures,92,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1065,Student 0066,1,PH101,Physics,99,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1065,Student 0066,1,CH101,Chemistry,65,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1066,Student 0067,1,MA101,Calculus,89,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1066,Student 0067,1,CS101,Intro to CS,96,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1066,Student 0067,1,CS102,Data Structures,62,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1066,Student 0067,1,PH101,Physics,69,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1066,Student 0067,1,CH101,Chemistry,76,100,A
+North Campus,Science,ME,IT,B,IT1067,Student 0068,1,MA101,Calculus,100,100,O
+North Campus,Science,ME,IT,B,IT1067,Student 0068,1,CS101,Intro to CS,66,100,B+
+North Campus,Science,ME,IT,B,IT1067,Student 0068,1,CS102,Data Structures,73,100,A
+North Campus,Science,ME,IT,B,IT1067,Student 0068,1,PH101,Physics,80,100,A+
+North Campus,Science,ME,IT,B,IT1067,Student 0068,1,CH101,Chemistry,87,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1068,Student 0069,1,MA101,Calculus,70,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1068,Student 0069,1,CS101,Intro to CS,77,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1068,Student 0069,1,CS102,Data Structures,84,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1068,Student 0069,1,PH101,Physics,91,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1068,Student 0069,1,CH101,Chemistry,98,100,O
+Main Campus,Science,EEE,EEE,A,EEE1069,Student 0070,1,MA101,Calculus,81,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1069,Student 0070,1,CS101,Intro to CS,88,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1069,Student 0070,1,CS102,Data Structures,95,100,O
+Main Campus,Science,EEE,EEE,A,EEE1069,Student 0070,1,PH101,Physics,61,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1069,Student 0070,1,CH101,Chemistry,68,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1070,Student 0071,1,MA101,Calculus,92,100,O
+North Campus,Engineering,CE,MECH,B,MECH1070,Student 0071,1,CS101,Intro to CS,99,100,O
+North Campus,Engineering,CE,MECH,B,MECH1070,Student 0071,1,CS102,Data Structures,65,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1070,Student 0071,1,PH101,Physics,72,100,A
+North Campus,Engineering,CE,MECH,B,MECH1070,Student 0071,1,CH101,Chemistry,79,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1071,Student 0072,1,MA101,Calculus,62,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1071,Student 0072,1,CS101,Intro to CS,69,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1071,Student 0072,1,CS102,Data Structures,76,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1071,Student 0072,1,PH101,Physics,83,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1071,Student 0072,1,CH101,Chemistry,90,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1072,Student 0073,1,MA101,Calculus,73,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1072,Student 0073,1,CS101,Intro to CS,80,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1072,Student 0073,1,CS102,Data Structures,87,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1072,Student 0073,1,PH101,Physics,94,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1072,Student 0073,1,CH101,Chemistry,60,100,B+
+North Campus,Science,ME,IT,B,IT1073,Student 0074,1,MA101,Calculus,84,100,A+
+North Campus,Science,ME,IT,B,IT1073,Student 0074,1,CS101,Intro to CS,91,100,O
+North Campus,Science,ME,IT,B,IT1073,Student 0074,1,CS102,Data Structures,98,100,O
+North Campus,Science,ME,IT,B,IT1073,Student 0074,1,PH101,Physics,64,100,B+
+North Campus,Science,ME,IT,B,IT1073,Student 0074,1,CH101,Chemistry,71,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1074,Student 0075,1,MA101,Calculus,95,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1074,Student 0075,1,CS101,Intro to CS,61,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1074,Student 0075,1,CS102,Data Structures,68,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1074,Student 0075,1,PH101,Physics,75,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1074,Student 0075,1,CH101,Chemistry,82,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1075,Student 0076,1,MA101,Calculus,65,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1075,Student 0076,1,CS101,Intro to CS,72,100,A
+Main Campus,Science,EEE,EEE,A,EEE1075,Student 0076,1,CS102,Data Structures,79,100,A
+Main Campus,Science,EEE,EEE,A,EEE1075,Student 0076,1,PH101,Physics,86,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1075,Student 0076,1,CH101,Chemistry,93,100,O
+North Campus,Engineering,CE,MECH,B,MECH1076,Student 0077,1,MA101,Calculus,76,100,A
+North Campus,Engineering,CE,MECH,B,MECH1076,Student 0077,1,CS101,Intro to CS,83,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1076,Student 0077,1,CS102,Data Structures,90,100,O
+North Campus,Engineering,CE,MECH,B,MECH1076,Student 0077,1,PH101,Physics,97,100,O
+North Campus,Engineering,CE,MECH,B,MECH1076,Student 0077,1,CH101,Chemistry,63,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1077,Student 0078,1,MA101,Calculus,87,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1077,Student 0078,1,CS101,Intro to CS,94,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1077,Student 0078,1,CS102,Data Structures,60,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1077,Student 0078,1,PH101,Physics,67,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1077,Student 0078,1,CH101,Chemistry,74,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1078,Student 0079,1,MA101,Calculus,98,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1078,Student 0079,1,CS101,Intro to CS,64,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1078,Student 0079,1,CS102,Data Structures,71,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1078,Student 0079,1,PH101,Physics,78,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1078,Student 0079,1,CH101,Chemistry,85,100,A+
+North Campus,Science,ME,IT,B,IT1079,Student 0080,1,MA101,Calculus,68,100,B+
+North Campus,Science,ME,IT,B,IT1079,Student 0080,1,CS101,Intro to CS,75,100,A
+North Campus,Science,ME,IT,B,IT1079,Student 0080,1,CS102,Data Structures,82,100,A+
+North Campus,Science,ME,IT,B,IT1079,Student 0080,1,PH101,Physics,89,100,A+
+North Campus,Science,ME,IT,B,IT1079,Student 0080,1,CH101,Chemistry,96,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1080,Student 0081,1,MA101,Calculus,79,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1080,Student 0081,1,CS101,Intro to CS,86,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1080,Student 0081,1,CS102,Data Structures,93,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1080,Student 0081,1,PH101,Physics,100,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1080,Student 0081,1,CH101,Chemistry,66,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1081,Student 0082,1,MA101,Calculus,90,100,O
+Main Campus,Science,EEE,EEE,A,EEE1081,Student 0082,1,CS101,Intro to CS,97,100,O
+Main Campus,Science,EEE,EEE,A,EEE1081,Student 0082,1,CS102,Data Structures,63,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1081,Student 0082,1,PH101,Physics,70,100,A
+Main Campus,Science,EEE,EEE,A,EEE1081,Student 0082,1,CH101,Chemistry,77,100,A
+North Campus,Engineering,CE,MECH,B,MECH1082,Student 0083,1,MA101,Calculus,60,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1082,Student 0083,1,CS101,Intro to CS,67,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1082,Student 0083,1,CS102,Data Structures,74,100,A
+North Campus,Engineering,CE,MECH,B,MECH1082,Student 0083,1,PH101,Physics,81,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1082,Student 0083,1,CH101,Chemistry,88,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1083,Student 0084,1,MA101,Calculus,71,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1083,Student 0084,1,CS101,Intro to CS,78,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1083,Student 0084,1,CS102,Data Structures,85,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1083,Student 0084,1,PH101,Physics,92,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1083,Student 0084,1,CH101,Chemistry,99,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1084,Student 0085,1,MA101,Calculus,82,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1084,Student 0085,1,CS101,Intro to CS,89,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1084,Student 0085,1,CS102,Data Structures,96,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1084,Student 0085,1,PH101,Physics,62,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1084,Student 0085,1,CH101,Chemistry,69,100,B+
+North Campus,Science,ME,IT,B,IT1085,Student 0086,1,MA101,Calculus,93,100,O
+North Campus,Science,ME,IT,B,IT1085,Student 0086,1,CS101,Intro to CS,100,100,O
+North Campus,Science,ME,IT,B,IT1085,Student 0086,1,CS102,Data Structures,66,100,B+
+North Campus,Science,ME,IT,B,IT1085,Student 0086,1,PH101,Physics,73,100,A
+North Campus,Science,ME,IT,B,IT1085,Student 0086,1,CH101,Chemistry,80,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1086,Student 0087,1,MA101,Calculus,63,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1086,Student 0087,1,CS101,Intro to CS,70,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1086,Student 0087,1,CS102,Data Structures,77,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1086,Student 0087,1,PH101,Physics,84,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1086,Student 0087,1,CH101,Chemistry,91,100,O
+Main Campus,Science,EEE,EEE,A,EEE1087,Student 0088,1,MA101,Calculus,74,100,A
+Main Campus,Science,EEE,EEE,A,EEE1087,Student 0088,1,CS101,Intro to CS,81,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1087,Student 0088,1,CS102,Data Structures,88,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1087,Student 0088,1,PH101,Physics,95,100,O
+Main Campus,Science,EEE,EEE,A,EEE1087,Student 0088,1,CH101,Chemistry,61,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1088,Student 0089,1,MA101,Calculus,85,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1088,Student 0089,1,CS101,Intro to CS,92,100,O
+North Campus,Engineering,CE,MECH,B,MECH1088,Student 0089,1,CS102,Data Structures,99,100,O
+North Campus,Engineering,CE,MECH,B,MECH1088,Student 0089,1,PH101,Physics,65,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1088,Student 0089,1,CH101,Chemistry,72,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1089,Student 0090,1,MA101,Calculus,96,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1089,Student 0090,1,CS101,Intro to CS,62,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1089,Student 0090,1,CS102,Data Structures,69,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1089,Student 0090,1,PH101,Physics,76,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1089,Student 0090,1,CH101,Chemistry,83,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1090,Student 0091,1,MA101,Calculus,66,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1090,Student 0091,1,CS101,Intro to CS,73,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1090,Student 0091,1,CS102,Data Structures,80,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1090,Student 0091,1,PH101,Physics,87,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1090,Student 0091,1,CH101,Chemistry,94,100,O
+North Campus,Science,ME,IT,B,IT1091,Student 0092,1,MA101,Calculus,77,100,A
+North Campus,Science,ME,IT,B,IT1091,Student 0092,1,CS101,Intro to CS,84,100,A+
+North Campus,Science,ME,IT,B,IT1091,Student 0092,1,CS102,Data Structures,91,100,O
+North Campus,Science,ME,IT,B,IT1091,Student 0092,1,PH101,Physics,98,100,O
+North Campus,Science,ME,IT,B,IT1091,Student 0092,1,CH101,Chemistry,64,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1092,Student 0093,1,MA101,Calculus,88,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1092,Student 0093,1,CS101,Intro to CS,95,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1092,Student 0093,1,CS102,Data Structures,61,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1092,Student 0093,1,PH101,Physics,68,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1092,Student 0093,1,CH101,Chemistry,75,100,A
+Main Campus,Science,EEE,EEE,A,EEE1093,Student 0094,1,MA101,Calculus,99,100,O
+Main Campus,Science,EEE,EEE,A,EEE1093,Student 0094,1,CS101,Intro to CS,65,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1093,Student 0094,1,CS102,Data Structures,72,100,A
+Main Campus,Science,EEE,EEE,A,EEE1093,Student 0094,1,PH101,Physics,79,100,A
+Main Campus,Science,EEE,EEE,A,EEE1093,Student 0094,1,CH101,Chemistry,86,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1094,Student 0095,1,MA101,Calculus,69,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1094,Student 0095,1,CS101,Intro to CS,76,100,A
+North Campus,Engineering,CE,MECH,B,MECH1094,Student 0095,1,CS102,Data Structures,83,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1094,Student 0095,1,PH101,Physics,90,100,O
+North Campus,Engineering,CE,MECH,B,MECH1094,Student 0095,1,CH101,Chemistry,97,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1095,Student 0096,1,MA101,Calculus,80,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1095,Student 0096,1,CS101,Intro to CS,87,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1095,Student 0096,1,CS102,Data Structures,94,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1095,Student 0096,1,PH101,Physics,60,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1095,Student 0096,1,CH101,Chemistry,67,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1096,Student 0097,1,MA101,Calculus,91,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1096,Student 0097,1,CS101,Intro to CS,98,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1096,Student 0097,1,CS102,Data Structures,64,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1096,Student 0097,1,PH101,Physics,71,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1096,Student 0097,1,CH101,Chemistry,78,100,A
+North Campus,Science,ME,IT,B,IT1097,Student 0098,1,MA101,Calculus,61,100,B+
+North Campus,Science,ME,IT,B,IT1097,Student 0098,1,CS101,Intro to CS,68,100,B+
+North Campus,Science,ME,IT,B,IT1097,Student 0098,1,CS102,Data Structures,75,100,A
+North Campus,Science,ME,IT,B,IT1097,Student 0098,1,PH101,Physics,82,100,A+
+North Campus,Science,ME,IT,B,IT1097,Student 0098,1,CH101,Chemistry,89,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1098,Student 0099,1,MA101,Calculus,72,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1098,Student 0099,1,CS101,Intro to CS,79,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1098,Student 0099,1,CS102,Data Structures,86,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1098,Student 0099,1,PH101,Physics,93,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1098,Student 0099,1,CH101,Chemistry,100,100,O
+Main Campus,Science,EEE,EEE,A,EEE1099,Student 0100,1,MA101,Calculus,83,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1099,Student 0100,1,CS101,Intro to CS,90,100,O
+Main Campus,Science,EEE,EEE,A,EEE1099,Student 0100,1,CS102,Data Structures,97,100,O
+Main Campus,Science,EEE,EEE,A,EEE1099,Student 0100,1,PH101,Physics,63,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1099,Student 0100,1,CH101,Chemistry,70,100,A
+North Campus,Engineering,CE,MECH,B,MECH1100,Student 0101,1,MA101,Calculus,94,100,O
+North Campus,Engineering,CE,MECH,B,MECH1100,Student 0101,1,CS101,Intro to CS,60,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1100,Student 0101,1,CS102,Data Structures,67,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1100,Student 0101,1,PH101,Physics,74,100,A
+North Campus,Engineering,CE,MECH,B,MECH1100,Student 0101,1,CH101,Chemistry,81,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1101,Student 0102,1,MA101,Calculus,64,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1101,Student 0102,1,CS101,Intro to CS,71,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1101,Student 0102,1,CS102,Data Structures,78,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1101,Student 0102,1,PH101,Physics,85,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1101,Student 0102,1,CH101,Chemistry,92,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1102,Student 0103,1,MA101,Calculus,75,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1102,Student 0103,1,CS101,Intro to CS,82,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1102,Student 0103,1,CS102,Data Structures,89,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1102,Student 0103,1,PH101,Physics,96,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1102,Student 0103,1,CH101,Chemistry,62,100,B+
+North Campus,Science,ME,IT,B,IT1103,Student 0104,1,MA101,Calculus,86,100,A+
+North Campus,Science,ME,IT,B,IT1103,Student 0104,1,CS101,Intro to CS,93,100,O
+North Campus,Science,ME,IT,B,IT1103,Student 0104,1,CS102,Data Structures,100,100,O
+North Campus,Science,ME,IT,B,IT1103,Student 0104,1,PH101,Physics,66,100,B+
+North Campus,Science,ME,IT,B,IT1103,Student 0104,1,CH101,Chemistry,73,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1104,Student 0105,1,MA101,Calculus,97,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1104,Student 0105,1,CS101,Intro to CS,63,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1104,Student 0105,1,CS102,Data Structures,70,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1104,Student 0105,1,PH101,Physics,77,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1104,Student 0105,1,CH101,Chemistry,84,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1105,Student 0106,1,MA101,Calculus,67,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1105,Student 0106,1,CS101,Intro to CS,74,100,A
+Main Campus,Science,EEE,EEE,A,EEE1105,Student 0106,1,CS102,Data Structures,81,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1105,Student 0106,1,PH101,Physics,88,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1105,Student 0106,1,CH101,Chemistry,95,100,O
+North Campus,Engineering,CE,MECH,B,MECH1106,Student 0107,1,MA101,Calculus,78,100,A
+North Campus,Engineering,CE,MECH,B,MECH1106,Student 0107,1,CS101,Intro to CS,85,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1106,Student 0107,1,CS102,Data Structures,92,100,O
+North Campus,Engineering,CE,MECH,B,MECH1106,Student 0107,1,PH101,Physics,99,100,O
+North Campus,Engineering,CE,MECH,B,MECH1106,Student 0107,1,CH101,Chemistry,65,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1107,Student 0108,1,MA101,Calculus,89,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1107,Student 0108,1,CS101,Intro to CS,96,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1107,Student 0108,1,CS102,Data Structures,62,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1107,Student 0108,1,PH101,Physics,69,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1107,Student 0108,1,CH101,Chemistry,76,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1108,Student 0109,1,MA101,Calculus,100,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1108,Student 0109,1,CS101,Intro to CS,66,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1108,Student 0109,1,CS102,Data Structures,73,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1108,Student 0109,1,PH101,Physics,80,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1108,Student 0109,1,CH101,Chemistry,87,100,A+
+North Campus,Science,ME,IT,B,IT1109,Student 0110,1,MA101,Calculus,70,100,A
+North Campus,Science,ME,IT,B,IT1109,Student 0110,1,CS101,Intro to CS,77,100,A
+North Campus,Science,ME,IT,B,IT1109,Student 0110,1,CS102,Data Structures,84,100,A+
+North Campus,Science,ME,IT,B,IT1109,Student 0110,1,PH101,Physics,91,100,O
+North Campus,Science,ME,IT,B,IT1109,Student 0110,1,CH101,Chemistry,98,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1110,Student 0111,1,MA101,Calculus,81,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1110,Student 0111,1,CS101,Intro to CS,88,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1110,Student 0111,1,CS102,Data Structures,95,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1110,Student 0111,1,PH101,Physics,61,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1110,Student 0111,1,CH101,Chemistry,68,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1111,Student 0112,1,MA101,Calculus,92,100,O
+Main Campus,Science,EEE,EEE,A,EEE1111,Student 0112,1,CS101,Intro to CS,99,100,O
+Main Campus,Science,EEE,EEE,A,EEE1111,Student 0112,1,CS102,Data Structures,65,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1111,Student 0112,1,PH101,Physics,72,100,A
+Main Campus,Science,EEE,EEE,A,EEE1111,Student 0112,1,CH101,Chemistry,79,100,A
+North Campus,Engineering,CE,MECH,B,MECH1112,Student 0113,1,MA101,Calculus,62,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1112,Student 0113,1,CS101,Intro to CS,69,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1112,Student 0113,1,CS102,Data Structures,76,100,A
+North Campus,Engineering,CE,MECH,B,MECH1112,Student 0113,1,PH101,Physics,83,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1112,Student 0113,1,CH101,Chemistry,90,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1113,Student 0114,1,MA101,Calculus,73,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1113,Student 0114,1,CS101,Intro to CS,80,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1113,Student 0114,1,CS102,Data Structures,87,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1113,Student 0114,1,PH101,Physics,94,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1113,Student 0114,1,CH101,Chemistry,60,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1114,Student 0115,1,MA101,Calculus,84,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1114,Student 0115,1,CS101,Intro to CS,91,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1114,Student 0115,1,CS102,Data Structures,98,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1114,Student 0115,1,PH101,Physics,64,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1114,Student 0115,1,CH101,Chemistry,71,100,A
+North Campus,Science,ME,IT,B,IT1115,Student 0116,1,MA101,Calculus,95,100,O
+North Campus,Science,ME,IT,B,IT1115,Student 0116,1,CS101,Intro to CS,61,100,B+
+North Campus,Science,ME,IT,B,IT1115,Student 0116,1,CS102,Data Structures,68,100,B+
+North Campus,Science,ME,IT,B,IT1115,Student 0116,1,PH101,Physics,75,100,A
+North Campus,Science,ME,IT,B,IT1115,Student 0116,1,CH101,Chemistry,82,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1116,Student 0117,1,MA101,Calculus,65,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1116,Student 0117,1,CS101,Intro to CS,72,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1116,Student 0117,1,CS102,Data Structures,79,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1116,Student 0117,1,PH101,Physics,86,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1116,Student 0117,1,CH101,Chemistry,93,100,O
+Main Campus,Science,EEE,EEE,A,EEE1117,Student 0118,1,MA101,Calculus,76,100,A
+Main Campus,Science,EEE,EEE,A,EEE1117,Student 0118,1,CS101,Intro to CS,83,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1117,Student 0118,1,CS102,Data Structures,90,100,O
+Main Campus,Science,EEE,EEE,A,EEE1117,Student 0118,1,PH101,Physics,97,100,O
+Main Campus,Science,EEE,EEE,A,EEE1117,Student 0118,1,CH101,Chemistry,63,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1118,Student 0119,1,MA101,Calculus,87,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1118,Student 0119,1,CS101,Intro to CS,94,100,O
+North Campus,Engineering,CE,MECH,B,MECH1118,Student 0119,1,CS102,Data Structures,60,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1118,Student 0119,1,PH101,Physics,67,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1118,Student 0119,1,CH101,Chemistry,74,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1119,Student 0120,1,MA101,Calculus,98,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1119,Student 0120,1,CS101,Intro to CS,64,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1119,Student 0120,1,CS102,Data Structures,71,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1119,Student 0120,1,PH101,Physics,78,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1119,Student 0120,1,CH101,Chemistry,85,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1120,Student 0121,1,MA101,Calculus,68,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1120,Student 0121,1,CS101,Intro to CS,75,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1120,Student 0121,1,CS102,Data Structures,82,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1120,Student 0121,1,PH101,Physics,89,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1120,Student 0121,1,CH101,Chemistry,96,100,O
+North Campus,Science,ME,IT,B,IT1121,Student 0122,1,MA101,Calculus,79,100,A
+North Campus,Science,ME,IT,B,IT1121,Student 0122,1,CS101,Intro to CS,86,100,A+
+North Campus,Science,ME,IT,B,IT1121,Student 0122,1,CS102,Data Structures,93,100,O
+North Campus,Science,ME,IT,B,IT1121,Student 0122,1,PH101,Physics,100,100,O
+North Campus,Science,ME,IT,B,IT1121,Student 0122,1,CH101,Chemistry,66,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1122,Student 0123,1,MA101,Calculus,90,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1122,Student 0123,1,CS101,Intro to CS,97,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1122,Student 0123,1,CS102,Data Structures,63,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1122,Student 0123,1,PH101,Physics,70,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1122,Student 0123,1,CH101,Chemistry,77,100,A
+Main Campus,Science,EEE,EEE,A,EEE1123,Student 0124,1,MA101,Calculus,60,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1123,Student 0124,1,CS101,Intro to CS,67,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1123,Student 0124,1,CS102,Data Structures,74,100,A
+Main Campus,Science,EEE,EEE,A,EEE1123,Student 0124,1,PH101,Physics,81,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1123,Student 0124,1,CH101,Chemistry,88,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1124,Student 0125,1,MA101,Calculus,71,100,A
+North Campus,Engineering,CE,MECH,B,MECH1124,Student 0125,1,CS101,Intro to CS,78,100,A
+North Campus,Engineering,CE,MECH,B,MECH1124,Student 0125,1,CS102,Data Structures,85,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1124,Student 0125,1,PH101,Physics,92,100,O
+North Campus,Engineering,CE,MECH,B,MECH1124,Student 0125,1,CH101,Chemistry,99,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1125,Student 0126,1,MA101,Calculus,82,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1125,Student 0126,1,CS101,Intro to CS,89,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1125,Student 0126,1,CS102,Data Structures,96,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1125,Student 0126,1,PH101,Physics,62,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1125,Student 0126,1,CH101,Chemistry,69,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1126,Student 0127,1,MA101,Calculus,93,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1126,Student 0127,1,CS101,Intro to CS,100,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1126,Student 0127,1,CS102,Data Structures,66,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1126,Student 0127,1,PH101,Physics,73,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1126,Student 0127,1,CH101,Chemistry,80,100,A+
+North Campus,Science,ME,IT,B,IT1127,Student 0128,1,MA101,Calculus,63,100,B+
+North Campus,Science,ME,IT,B,IT1127,Student 0128,1,CS101,Intro to CS,70,100,A
+North Campus,Science,ME,IT,B,IT1127,Student 0128,1,CS102,Data Structures,77,100,A
+North Campus,Science,ME,IT,B,IT1127,Student 0128,1,PH101,Physics,84,100,A+
+North Campus,Science,ME,IT,B,IT1127,Student 0128,1,CH101,Chemistry,91,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1128,Student 0129,1,MA101,Calculus,74,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1128,Student 0129,1,CS101,Intro to CS,81,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1128,Student 0129,1,CS102,Data Structures,88,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1128,Student 0129,1,PH101,Physics,95,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1128,Student 0129,1,CH101,Chemistry,61,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1129,Student 0130,1,MA101,Calculus,85,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1129,Student 0130,1,CS101,Intro to CS,92,100,O
+Main Campus,Science,EEE,EEE,A,EEE1129,Student 0130,1,CS102,Data Structures,99,100,O
+Main Campus,Science,EEE,EEE,A,EEE1129,Student 0130,1,PH101,Physics,65,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1129,Student 0130,1,CH101,Chemistry,72,100,A
+North Campus,Engineering,CE,MECH,B,MECH1130,Student 0131,1,MA101,Calculus,96,100,O
+North Campus,Engineering,CE,MECH,B,MECH1130,Student 0131,1,CS101,Intro to CS,62,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1130,Student 0131,1,CS102,Data Structures,69,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1130,Student 0131,1,PH101,Physics,76,100,A
+North Campus,Engineering,CE,MECH,B,MECH1130,Student 0131,1,CH101,Chemistry,83,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1131,Student 0132,1,MA101,Calculus,66,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1131,Student 0132,1,CS101,Intro to CS,73,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1131,Student 0132,1,CS102,Data Structures,80,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1131,Student 0132,1,PH101,Physics,87,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1131,Student 0132,1,CH101,Chemistry,94,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1132,Student 0133,1,MA101,Calculus,77,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1132,Student 0133,1,CS101,Intro to CS,84,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1132,Student 0133,1,CS102,Data Structures,91,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1132,Student 0133,1,PH101,Physics,98,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1132,Student 0133,1,CH101,Chemistry,64,100,B+
+North Campus,Science,ME,IT,B,IT1133,Student 0134,1,MA101,Calculus,88,100,A+
+North Campus,Science,ME,IT,B,IT1133,Student 0134,1,CS101,Intro to CS,95,100,O
+North Campus,Science,ME,IT,B,IT1133,Student 0134,1,CS102,Data Structures,61,100,B+
+North Campus,Science,ME,IT,B,IT1133,Student 0134,1,PH101,Physics,68,100,B+
+North Campus,Science,ME,IT,B,IT1133,Student 0134,1,CH101,Chemistry,75,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1134,Student 0135,1,MA101,Calculus,99,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1134,Student 0135,1,CS101,Intro to CS,65,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1134,Student 0135,1,CS102,Data Structures,72,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1134,Student 0135,1,PH101,Physics,79,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1134,Student 0135,1,CH101,Chemistry,86,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1135,Student 0136,1,MA101,Calculus,69,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1135,Student 0136,1,CS101,Intro to CS,76,100,A
+Main Campus,Science,EEE,EEE,A,EEE1135,Student 0136,1,CS102,Data Structures,83,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1135,Student 0136,1,PH101,Physics,90,100,O
+Main Campus,Science,EEE,EEE,A,EEE1135,Student 0136,1,CH101,Chemistry,97,100,O
+North Campus,Engineering,CE,MECH,B,MECH1136,Student 0137,1,MA101,Calculus,80,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1136,Student 0137,1,CS101,Intro to CS,87,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1136,Student 0137,1,CS102,Data Structures,94,100,O
+North Campus,Engineering,CE,MECH,B,MECH1136,Student 0137,1,PH101,Physics,60,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1136,Student 0137,1,CH101,Chemistry,67,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1137,Student 0138,1,MA101,Calculus,91,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1137,Student 0138,1,CS101,Intro to CS,98,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1137,Student 0138,1,CS102,Data Structures,64,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1137,Student 0138,1,PH101,Physics,71,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1137,Student 0138,1,CH101,Chemistry,78,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1138,Student 0139,1,MA101,Calculus,61,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1138,Student 0139,1,CS101,Intro to CS,68,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1138,Student 0139,1,CS102,Data Structures,75,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1138,Student 0139,1,PH101,Physics,82,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1138,Student 0139,1,CH101,Chemistry,89,100,A+
+North Campus,Science,ME,IT,B,IT1139,Student 0140,1,MA101,Calculus,72,100,A
+North Campus,Science,ME,IT,B,IT1139,Student 0140,1,CS101,Intro to CS,79,100,A
+North Campus,Science,ME,IT,B,IT1139,Student 0140,1,CS102,Data Structures,86,100,A+
+North Campus,Science,ME,IT,B,IT1139,Student 0140,1,PH101,Physics,93,100,O
+North Campus,Science,ME,IT,B,IT1139,Student 0140,1,CH101,Chemistry,100,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1140,Student 0141,1,MA101,Calculus,83,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1140,Student 0141,1,CS101,Intro to CS,90,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1140,Student 0141,1,CS102,Data Structures,97,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1140,Student 0141,1,PH101,Physics,63,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1140,Student 0141,1,CH101,Chemistry,70,100,A
+Main Campus,Science,EEE,EEE,A,EEE1141,Student 0142,1,MA101,Calculus,94,100,O
+Main Campus,Science,EEE,EEE,A,EEE1141,Student 0142,1,CS101,Intro to CS,60,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1141,Student 0142,1,CS102,Data Structures,67,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1141,Student 0142,1,PH101,Physics,74,100,A
+Main Campus,Science,EEE,EEE,A,EEE1141,Student 0142,1,CH101,Chemistry,81,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1142,Student 0143,1,MA101,Calculus,64,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1142,Student 0143,1,CS101,Intro to CS,71,100,A
+North Campus,Engineering,CE,MECH,B,MECH1142,Student 0143,1,CS102,Data Structures,78,100,A
+North Campus,Engineering,CE,MECH,B,MECH1142,Student 0143,1,PH101,Physics,85,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1142,Student 0143,1,CH101,Chemistry,92,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1143,Student 0144,1,MA101,Calculus,75,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1143,Student 0144,1,CS101,Intro to CS,82,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1143,Student 0144,1,CS102,Data Structures,89,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1143,Student 0144,1,PH101,Physics,96,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1143,Student 0144,1,CH101,Chemistry,62,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1144,Student 0145,1,MA101,Calculus,86,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1144,Student 0145,1,CS101,Intro to CS,93,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1144,Student 0145,1,CS102,Data Structures,100,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1144,Student 0145,1,PH101,Physics,66,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1144,Student 0145,1,CH101,Chemistry,73,100,A
+North Campus,Science,ME,IT,B,IT1145,Student 0146,1,MA101,Calculus,97,100,O
+North Campus,Science,ME,IT,B,IT1145,Student 0146,1,CS101,Intro to CS,63,100,B+
+North Campus,Science,ME,IT,B,IT1145,Student 0146,1,CS102,Data Structures,70,100,A
+North Campus,Science,ME,IT,B,IT1145,Student 0146,1,PH101,Physics,77,100,A
+North Campus,Science,ME,IT,B,IT1145,Student 0146,1,CH101,Chemistry,84,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1146,Student 0147,1,MA101,Calculus,67,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1146,Student 0147,1,CS101,Intro to CS,74,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1146,Student 0147,1,CS102,Data Structures,81,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1146,Student 0147,1,PH101,Physics,88,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1146,Student 0147,1,CH101,Chemistry,95,100,O
+Main Campus,Science,EEE,EEE,A,EEE1147,Student 0148,1,MA101,Calculus,78,100,A
+Main Campus,Science,EEE,EEE,A,EEE1147,Student 0148,1,CS101,Intro to CS,85,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1147,Student 0148,1,CS102,Data Structures,92,100,O
+Main Campus,Science,EEE,EEE,A,EEE1147,Student 0148,1,PH101,Physics,99,100,O
+Main Campus,Science,EEE,EEE,A,EEE1147,Student 0148,1,CH101,Chemistry,65,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1148,Student 0149,1,MA101,Calculus,89,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1148,Student 0149,1,CS101,Intro to CS,96,100,O
+North Campus,Engineering,CE,MECH,B,MECH1148,Student 0149,1,CS102,Data Structures,62,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1148,Student 0149,1,PH101,Physics,69,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1148,Student 0149,1,CH101,Chemistry,76,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1149,Student 0150,1,MA101,Calculus,100,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1149,Student 0150,1,CS101,Intro to CS,66,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1149,Student 0150,1,CS102,Data Structures,73,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1149,Student 0150,1,PH101,Physics,80,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1149,Student 0150,1,CH101,Chemistry,87,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1150,Student 0151,1,MA101,Calculus,70,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1150,Student 0151,1,CS101,Intro to CS,77,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1150,Student 0151,1,CS102,Data Structures,84,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1150,Student 0151,1,PH101,Physics,91,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1150,Student 0151,1,CH101,Chemistry,98,100,O
+North Campus,Science,ME,IT,B,IT1151,Student 0152,1,MA101,Calculus,81,100,A+
+North Campus,Science,ME,IT,B,IT1151,Student 0152,1,CS101,Intro to CS,88,100,A+
+North Campus,Science,ME,IT,B,IT1151,Student 0152,1,CS102,Data Structures,95,100,O
+North Campus,Science,ME,IT,B,IT1151,Student 0152,1,PH101,Physics,61,100,B+
+North Campus,Science,ME,IT,B,IT1151,Student 0152,1,CH101,Chemistry,68,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1152,Student 0153,1,MA101,Calculus,92,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1152,Student 0153,1,CS101,Intro to CS,99,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1152,Student 0153,1,CS102,Data Structures,65,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1152,Student 0153,1,PH101,Physics,72,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1152,Student 0153,1,CH101,Chemistry,79,100,A
+Main Campus,Science,EEE,EEE,A,EEE1153,Student 0154,1,MA101,Calculus,62,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1153,Student 0154,1,CS101,Intro to CS,69,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1153,Student 0154,1,CS102,Data Structures,76,100,A
+Main Campus,Science,EEE,EEE,A,EEE1153,Student 0154,1,PH101,Physics,83,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1153,Student 0154,1,CH101,Chemistry,90,100,O
+North Campus,Engineering,CE,MECH,B,MECH1154,Student 0155,1,MA101,Calculus,73,100,A
+North Campus,Engineering,CE,MECH,B,MECH1154,Student 0155,1,CS101,Intro to CS,80,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1154,Student 0155,1,CS102,Data Structures,87,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1154,Student 0155,1,PH101,Physics,94,100,O
+North Campus,Engineering,CE,MECH,B,MECH1154,Student 0155,1,CH101,Chemistry,60,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1155,Student 0156,1,MA101,Calculus,84,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1155,Student 0156,1,CS101,Intro to CS,91,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1155,Student 0156,1,CS102,Data Structures,98,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1155,Student 0156,1,PH101,Physics,64,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1155,Student 0156,1,CH101,Chemistry,71,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1156,Student 0157,1,MA101,Calculus,95,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1156,Student 0157,1,CS101,Intro to CS,61,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1156,Student 0157,1,CS102,Data Structures,68,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1156,Student 0157,1,PH101,Physics,75,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1156,Student 0157,1,CH101,Chemistry,82,100,A+
+North Campus,Science,ME,IT,B,IT1157,Student 0158,1,MA101,Calculus,65,100,B+
+North Campus,Science,ME,IT,B,IT1157,Student 0158,1,CS101,Intro to CS,72,100,A
+North Campus,Science,ME,IT,B,IT1157,Student 0158,1,CS102,Data Structures,79,100,A
+North Campus,Science,ME,IT,B,IT1157,Student 0158,1,PH101,Physics,86,100,A+
+North Campus,Science,ME,IT,B,IT1157,Student 0158,1,CH101,Chemistry,93,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1158,Student 0159,1,MA101,Calculus,76,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1158,Student 0159,1,CS101,Intro to CS,83,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1158,Student 0159,1,CS102,Data Structures,90,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1158,Student 0159,1,PH101,Physics,97,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1158,Student 0159,1,CH101,Chemistry,63,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1159,Student 0160,1,MA101,Calculus,87,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1159,Student 0160,1,CS101,Intro to CS,94,100,O
+Main Campus,Science,EEE,EEE,A,EEE1159,Student 0160,1,CS102,Data Structures,60,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1159,Student 0160,1,PH101,Physics,67,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1159,Student 0160,1,CH101,Chemistry,74,100,A
+North Campus,Engineering,CE,MECH,B,MECH1160,Student 0161,1,MA101,Calculus,98,100,O
+North Campus,Engineering,CE,MECH,B,MECH1160,Student 0161,1,CS101,Intro to CS,64,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1160,Student 0161,1,CS102,Data Structures,71,100,A
+North Campus,Engineering,CE,MECH,B,MECH1160,Student 0161,1,PH101,Physics,78,100,A
+North Campus,Engineering,CE,MECH,B,MECH1160,Student 0161,1,CH101,Chemistry,85,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1161,Student 0162,1,MA101,Calculus,68,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1161,Student 0162,1,CS101,Intro to CS,75,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1161,Student 0162,1,CS102,Data Structures,82,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1161,Student 0162,1,PH101,Physics,89,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1161,Student 0162,1,CH101,Chemistry,96,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1162,Student 0163,1,MA101,Calculus,79,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1162,Student 0163,1,CS101,Intro to CS,86,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1162,Student 0163,1,CS102,Data Structures,93,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1162,Student 0163,1,PH101,Physics,100,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1162,Student 0163,1,CH101,Chemistry,66,100,B+
+North Campus,Science,ME,IT,B,IT1163,Student 0164,1,MA101,Calculus,90,100,O
+North Campus,Science,ME,IT,B,IT1163,Student 0164,1,CS101,Intro to CS,97,100,O
+North Campus,Science,ME,IT,B,IT1163,Student 0164,1,CS102,Data Structures,63,100,B+
+North Campus,Science,ME,IT,B,IT1163,Student 0164,1,PH101,Physics,70,100,A
+North Campus,Science,ME,IT,B,IT1163,Student 0164,1,CH101,Chemistry,77,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1164,Student 0165,1,MA101,Calculus,60,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1164,Student 0165,1,CS101,Intro to CS,67,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1164,Student 0165,1,CS102,Data Structures,74,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1164,Student 0165,1,PH101,Physics,81,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1164,Student 0165,1,CH101,Chemistry,88,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1165,Student 0166,1,MA101,Calculus,71,100,A
+Main Campus,Science,EEE,EEE,A,EEE1165,Student 0166,1,CS101,Intro to CS,78,100,A
+Main Campus,Science,EEE,EEE,A,EEE1165,Student 0166,1,CS102,Data Structures,85,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1165,Student 0166,1,PH101,Physics,92,100,O
+Main Campus,Science,EEE,EEE,A,EEE1165,Student 0166,1,CH101,Chemistry,99,100,O
+North Campus,Engineering,CE,MECH,B,MECH1166,Student 0167,1,MA101,Calculus,82,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1166,Student 0167,1,CS101,Intro to CS,89,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1166,Student 0167,1,CS102,Data Structures,96,100,O
+North Campus,Engineering,CE,MECH,B,MECH1166,Student 0167,1,PH101,Physics,62,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1166,Student 0167,1,CH101,Chemistry,69,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1167,Student 0168,1,MA101,Calculus,93,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1167,Student 0168,1,CS101,Intro to CS,100,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1167,Student 0168,1,CS102,Data Structures,66,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1167,Student 0168,1,PH101,Physics,73,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1167,Student 0168,1,CH101,Chemistry,80,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1168,Student 0169,1,MA101,Calculus,63,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1168,Student 0169,1,CS101,Intro to CS,70,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1168,Student 0169,1,CS102,Data Structures,77,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1168,Student 0169,1,PH101,Physics,84,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1168,Student 0169,1,CH101,Chemistry,91,100,O
+North Campus,Science,ME,IT,B,IT1169,Student 0170,1,MA101,Calculus,74,100,A
+North Campus,Science,ME,IT,B,IT1169,Student 0170,1,CS101,Intro to CS,81,100,A+
+North Campus,Science,ME,IT,B,IT1169,Student 0170,1,CS102,Data Structures,88,100,A+
+North Campus,Science,ME,IT,B,IT1169,Student 0170,1,PH101,Physics,95,100,O
+North Campus,Science,ME,IT,B,IT1169,Student 0170,1,CH101,Chemistry,61,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1170,Student 0171,1,MA101,Calculus,85,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1170,Student 0171,1,CS101,Intro to CS,92,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1170,Student 0171,1,CS102,Data Structures,99,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1170,Student 0171,1,PH101,Physics,65,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1170,Student 0171,1,CH101,Chemistry,72,100,A
+Main Campus,Science,EEE,EEE,A,EEE1171,Student 0172,1,MA101,Calculus,96,100,O
+Main Campus,Science,EEE,EEE,A,EEE1171,Student 0172,1,CS101,Intro to CS,62,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1171,Student 0172,1,CS102,Data Structures,69,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1171,Student 0172,1,PH101,Physics,76,100,A
+Main Campus,Science,EEE,EEE,A,EEE1171,Student 0172,1,CH101,Chemistry,83,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1172,Student 0173,1,MA101,Calculus,66,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1172,Student 0173,1,CS101,Intro to CS,73,100,A
+North Campus,Engineering,CE,MECH,B,MECH1172,Student 0173,1,CS102,Data Structures,80,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1172,Student 0173,1,PH101,Physics,87,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1172,Student 0173,1,CH101,Chemistry,94,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1173,Student 0174,1,MA101,Calculus,77,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1173,Student 0174,1,CS101,Intro to CS,84,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1173,Student 0174,1,CS102,Data Structures,91,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1173,Student 0174,1,PH101,Physics,98,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1173,Student 0174,1,CH101,Chemistry,64,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1174,Student 0175,1,MA101,Calculus,88,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1174,Student 0175,1,CS101,Intro to CS,95,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1174,Student 0175,1,CS102,Data Structures,61,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1174,Student 0175,1,PH101,Physics,68,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1174,Student 0175,1,CH101,Chemistry,75,100,A
+North Campus,Science,ME,IT,B,IT1175,Student 0176,1,MA101,Calculus,99,100,O
+North Campus,Science,ME,IT,B,IT1175,Student 0176,1,CS101,Intro to CS,65,100,B+
+North Campus,Science,ME,IT,B,IT1175,Student 0176,1,CS102,Data Structures,72,100,A
+North Campus,Science,ME,IT,B,IT1175,Student 0176,1,PH101,Physics,79,100,A
+North Campus,Science,ME,IT,B,IT1175,Student 0176,1,CH101,Chemistry,86,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1176,Student 0177,1,MA101,Calculus,69,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1176,Student 0177,1,CS101,Intro to CS,76,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1176,Student 0177,1,CS102,Data Structures,83,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1176,Student 0177,1,PH101,Physics,90,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1176,Student 0177,1,CH101,Chemistry,97,100,O
+Main Campus,Science,EEE,EEE,A,EEE1177,Student 0178,1,MA101,Calculus,80,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1177,Student 0178,1,CS101,Intro to CS,87,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1177,Student 0178,1,CS102,Data Structures,94,100,O
+Main Campus,Science,EEE,EEE,A,EEE1177,Student 0178,1,PH101,Physics,60,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1177,Student 0178,1,CH101,Chemistry,67,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1178,Student 0179,1,MA101,Calculus,91,100,O
+North Campus,Engineering,CE,MECH,B,MECH1178,Student 0179,1,CS101,Intro to CS,98,100,O
+North Campus,Engineering,CE,MECH,B,MECH1178,Student 0179,1,CS102,Data Structures,64,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1178,Student 0179,1,PH101,Physics,71,100,A
+North Campus,Engineering,CE,MECH,B,MECH1178,Student 0179,1,CH101,Chemistry,78,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1179,Student 0180,1,MA101,Calculus,61,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1179,Student 0180,1,CS101,Intro to CS,68,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1179,Student 0180,1,CS102,Data Structures,75,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1179,Student 0180,1,PH101,Physics,82,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1179,Student 0180,1,CH101,Chemistry,89,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1180,Student 0181,1,MA101,Calculus,72,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1180,Student 0181,1,CS101,Intro to CS,79,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1180,Student 0181,1,CS102,Data Structures,86,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1180,Student 0181,1,PH101,Physics,93,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1180,Student 0181,1,CH101,Chemistry,100,100,O
+North Campus,Science,ME,IT,B,IT1181,Student 0182,1,MA101,Calculus,83,100,A+
+North Campus,Science,ME,IT,B,IT1181,Student 0182,1,CS101,Intro to CS,90,100,O
+North Campus,Science,ME,IT,B,IT1181,Student 0182,1,CS102,Data Structures,97,100,O
+North Campus,Science,ME,IT,B,IT1181,Student 0182,1,PH101,Physics,63,100,B+
+North Campus,Science,ME,IT,B,IT1181,Student 0182,1,CH101,Chemistry,70,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1182,Student 0183,1,MA101,Calculus,94,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1182,Student 0183,1,CS101,Intro to CS,60,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1182,Student 0183,1,CS102,Data Structures,67,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1182,Student 0183,1,PH101,Physics,74,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1182,Student 0183,1,CH101,Chemistry,81,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1183,Student 0184,1,MA101,Calculus,64,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1183,Student 0184,1,CS101,Intro to CS,71,100,A
+Main Campus,Science,EEE,EEE,A,EEE1183,Student 0184,1,CS102,Data Structures,78,100,A
+Main Campus,Science,EEE,EEE,A,EEE1183,Student 0184,1,PH101,Physics,85,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1183,Student 0184,1,CH101,Chemistry,92,100,O
+North Campus,Engineering,CE,MECH,B,MECH1184,Student 0185,1,MA101,Calculus,75,100,A
+North Campus,Engineering,CE,MECH,B,MECH1184,Student 0185,1,CS101,Intro to CS,82,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1184,Student 0185,1,CS102,Data Structures,89,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1184,Student 0185,1,PH101,Physics,96,100,O
+North Campus,Engineering,CE,MECH,B,MECH1184,Student 0185,1,CH101,Chemistry,62,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1185,Student 0186,1,MA101,Calculus,86,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1185,Student 0186,1,CS101,Intro to CS,93,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1185,Student 0186,1,CS102,Data Structures,100,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1185,Student 0186,1,PH101,Physics,66,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1185,Student 0186,1,CH101,Chemistry,73,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1186,Student 0187,1,MA101,Calculus,97,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1186,Student 0187,1,CS101,Intro to CS,63,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1186,Student 0187,1,CS102,Data Structures,70,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1186,Student 0187,1,PH101,Physics,77,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1186,Student 0187,1,CH101,Chemistry,84,100,A+
+North Campus,Science,ME,IT,B,IT1187,Student 0188,1,MA101,Calculus,67,100,B+
+North Campus,Science,ME,IT,B,IT1187,Student 0188,1,CS101,Intro to CS,74,100,A
+North Campus,Science,ME,IT,B,IT1187,Student 0188,1,CS102,Data Structures,81,100,A+
+North Campus,Science,ME,IT,B,IT1187,Student 0188,1,PH101,Physics,88,100,A+
+North Campus,Science,ME,IT,B,IT1187,Student 0188,1,CH101,Chemistry,95,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1188,Student 0189,1,MA101,Calculus,78,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1188,Student 0189,1,CS101,Intro to CS,85,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1188,Student 0189,1,CS102,Data Structures,92,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1188,Student 0189,1,PH101,Physics,99,100,O
+South Campus,Engineering,ECE,ECE,C,ECE1188,Student 0189,1,CH101,Chemistry,65,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1189,Student 0190,1,MA101,Calculus,89,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1189,Student 0190,1,CS101,Intro to CS,96,100,O
+Main Campus,Science,EEE,EEE,A,EEE1189,Student 0190,1,CS102,Data Structures,62,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1189,Student 0190,1,PH101,Physics,69,100,B+
+Main Campus,Science,EEE,EEE,A,EEE1189,Student 0190,1,CH101,Chemistry,76,100,A
+North Campus,Engineering,CE,MECH,B,MECH1190,Student 0191,1,MA101,Calculus,100,100,O
+North Campus,Engineering,CE,MECH,B,MECH1190,Student 0191,1,CS101,Intro to CS,66,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1190,Student 0191,1,CS102,Data Structures,73,100,A
+North Campus,Engineering,CE,MECH,B,MECH1190,Student 0191,1,PH101,Physics,80,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1190,Student 0191,1,CH101,Chemistry,87,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1191,Student 0192,1,MA101,Calculus,70,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1191,Student 0192,1,CS101,Intro to CS,77,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1191,Student 0192,1,CS102,Data Structures,84,100,A+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1191,Student 0192,1,PH101,Physics,91,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1191,Student 0192,1,CH101,Chemistry,98,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1192,Student 0193,1,MA101,Calculus,81,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1192,Student 0193,1,CS101,Intro to CS,88,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1192,Student 0193,1,CS102,Data Structures,95,100,O
+Main Campus,Engineering,CSE,CSE,A,CSE1192,Student 0193,1,PH101,Physics,61,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1192,Student 0193,1,CH101,Chemistry,68,100,B+
+North Campus,Science,ME,IT,B,IT1193,Student 0194,1,MA101,Calculus,92,100,O
+North Campus,Science,ME,IT,B,IT1193,Student 0194,1,CS101,Intro to CS,99,100,O
+North Campus,Science,ME,IT,B,IT1193,Student 0194,1,CS102,Data Structures,65,100,B+
+North Campus,Science,ME,IT,B,IT1193,Student 0194,1,PH101,Physics,72,100,A
+North Campus,Science,ME,IT,B,IT1193,Student 0194,1,CH101,Chemistry,79,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1194,Student 0195,1,MA101,Calculus,62,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1194,Student 0195,1,CS101,Intro to CS,69,100,B+
+South Campus,Engineering,ECE,ECE,C,ECE1194,Student 0195,1,CS102,Data Structures,76,100,A
+South Campus,Engineering,ECE,ECE,C,ECE1194,Student 0195,1,PH101,Physics,83,100,A+
+South Campus,Engineering,ECE,ECE,C,ECE1194,Student 0195,1,CH101,Chemistry,90,100,O
+Main Campus,Science,EEE,EEE,A,EEE1195,Student 0196,1,MA101,Calculus,73,100,A
+Main Campus,Science,EEE,EEE,A,EEE1195,Student 0196,1,CS101,Intro to CS,80,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1195,Student 0196,1,CS102,Data Structures,87,100,A+
+Main Campus,Science,EEE,EEE,A,EEE1195,Student 0196,1,PH101,Physics,94,100,O
+Main Campus,Science,EEE,EEE,A,EEE1195,Student 0196,1,CH101,Chemistry,60,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1196,Student 0197,1,MA101,Calculus,84,100,A+
+North Campus,Engineering,CE,MECH,B,MECH1196,Student 0197,1,CS101,Intro to CS,91,100,O
+North Campus,Engineering,CE,MECH,B,MECH1196,Student 0197,1,CS102,Data Structures,98,100,O
+North Campus,Engineering,CE,MECH,B,MECH1196,Student 0197,1,PH101,Physics,64,100,B+
+North Campus,Engineering,CE,MECH,B,MECH1196,Student 0197,1,CH101,Chemistry,71,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1197,Student 0198,1,MA101,Calculus,95,100,O
+South Campus,Science,CHEM,CIVIL,C,CIVIL1197,Student 0198,1,CS101,Intro to CS,61,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1197,Student 0198,1,CS102,Data Structures,68,100,B+
+South Campus,Science,CHEM,CIVIL,C,CIVIL1197,Student 0198,1,PH101,Physics,75,100,A
+South Campus,Science,CHEM,CIVIL,C,CIVIL1197,Student 0198,1,CH101,Chemistry,82,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1198,Student 0199,1,MA101,Calculus,65,100,B+
+Main Campus,Engineering,CSE,CSE,A,CSE1198,Student 0199,1,CS101,Intro to CS,72,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1198,Student 0199,1,CS102,Data Structures,79,100,A
+Main Campus,Engineering,CSE,CSE,A,CSE1198,Student 0199,1,PH101,Physics,86,100,A+
+Main Campus,Engineering,CSE,CSE,A,CSE1198,Student 0199,1,CH101,Chemistry,93,100,O
+North Campus,Science,ME,IT,B,IT1199,Student 0200,1,MA101,Calculus,76,100,A
+North Campus,Science,ME,IT,B,IT1199,Student 0200,1,CS101,Intro to CS,83,100,A+
+North Campus,Science,ME,IT,B,IT1199,Student 0200,1,CS102,Data Structures,90,100,O
+North Campus,Science,ME,IT,B,IT1199,Student 0200,1,PH101,Physics,97,100,O
+North Campus,Science,ME,IT,B,IT1199,Student 0200,1,CH101,Chemistry,63,100,B+
