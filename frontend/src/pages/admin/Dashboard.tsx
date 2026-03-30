@@ -238,7 +238,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 animate-slide-up sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 animate-slide-up md:grid-cols-2 lg:grid-cols-4">
         <StatCard title="Scoped Students" value={stats.total_students} icon={Users} color="bg-indigo-100 text-indigo-600" darkColor="dark:bg-indigo-900/50 dark:text-indigo-400" />
         <StatCard title="Subjects Taught" value={stats.total_subjects} icon={BookOpen} color="bg-blue-100 text-blue-600" darkColor="dark:bg-blue-900/50 dark:text-blue-400" />
         <StatCard title="Results In Scope" value={stats.total_results} icon={FileCheck} color="bg-emerald-100 text-emerald-600" darkColor="dark:bg-emerald-900/50 dark:text-emerald-400" />
@@ -435,7 +435,7 @@ function FilterSelect({ label, value, options, allLabel, onChange }: FilterSelec
       <select
         value={String(value)}
         onChange={(event) => onChange(event.target.value)}
-        className="input-field w-full py-2 text-sm normal-case"
+        className="input-field w-full py-3 text-sm normal-case"
       >
         <option value="all">{allLabel}</option>
         {options.map((option) => (

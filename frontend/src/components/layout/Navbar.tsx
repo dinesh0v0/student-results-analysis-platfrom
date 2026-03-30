@@ -19,10 +19,10 @@ export function Navbar({ onMenuClick }: NavbarProps) {
     <nav className="sticky top-0 z-40 glass-panel border-b border-slate-200 dark:border-slate-800 px-4 h-16 flex items-center justify-between transition-colors duration-300">
       <div className="flex items-center gap-3">
         {user && onMenuClick && (
-          <button 
-            onClick={onMenuClick}
-            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 lg:hidden transition-colors"
-          >
+        <button 
+          onClick={onMenuClick}
+          className="p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 lg:hidden transition-colors"
+        >
             <Menu className="w-5 h-5" />
           </button>
         )}
@@ -44,7 +44,7 @@ export function Navbar({ onMenuClick }: NavbarProps) {
         {/* Theme Toggle */}
         <button
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
-          className="p-2.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors"
+          className="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors"
           title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
         >
           {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -53,7 +53,7 @@ export function Navbar({ onMenuClick }: NavbarProps) {
         {!user && !isAuthPage && (
           <Link 
             to="/auth/student/login" 
-            className="btn-primary text-sm py-2 px-4 whitespace-nowrap"
+            className="btn-primary text-sm py-3 px-4 whitespace-nowrap"
           >
             Student Login
           </Link>
@@ -72,7 +72,7 @@ export function Navbar({ onMenuClick }: NavbarProps) {
             
             <button
               onClick={logout}
-              className="p-2 rounded-lg text-slate-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20 dark:hover:text-red-400 transition-colors"
+              className="p-3 rounded-lg text-slate-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20 dark:hover:text-red-400 transition-colors"
               title="Logout"
             >
               <LogOut className="w-5 h-5" />
